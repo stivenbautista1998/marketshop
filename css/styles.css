@@ -90,15 +90,22 @@ html {
     color: var(--hospital-green);
 }
 
-.login-section__message {
+.general-message-link {
     display: inline-block;
     text-decoration: none;
     font-size: 1.2rem;
-    color: var(--hospital-green);
     margin-top: 3em;
 }
 
-.login-section__message:hover {
+.green__message {
+    color: var(--hospital-green);
+}
+
+.grey__message {
+    color: #797979;
+}
+
+a.grey__message:hover, a.green__message:hover {
     text-decoration: underline;
     color: var(--soft-blue);
 }

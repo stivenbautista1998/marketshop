@@ -10,7 +10,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Roboto:wght@700&display=swap" rel="stylesheet">
-    <script src="../js/script.js"></script>
 </head>
 <body>
     <div class="wrapper-recovery">
@@ -20,16 +19,15 @@
             </nav>
         </header>
         <main>
-            <h2 class="recovery-tittle">Password recovery</h2>
-            <p class="recovery-text">Inform the email address used to create your account</p>
-            <label class="login-section__label" for="user-txt">Email address</label>
-            <input class="general-input login-section__recovery" id="user-txt" type="text">
-            <a href="success-email.html">
+            <h2 class="recovery-tittle">Email has been sent!</h2>
+            <p class="recovery-text">Please check your inbox for instructions on how to reset the password</p>
+            <img class="sms-icon" src="../assets/icons/sms-icon.svg" alt="image of a letter">
+            <a href="../index.html">
                 <button id="login-btn" class="general-button green--btn">
-                    Submit
+                    Login
                 </button>
             </a>
-            <a href="../index.html" class="general-message-link green__message">Back to log in</a>
+            <p class="general-message-link grey__message">Didn’t receive the email?</p> <a href="pass-recovery.html" class="general-message-link green__message">Resend</a>
         </main>
     </div>
 </body>
