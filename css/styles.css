@@ -6,6 +6,7 @@
     --very-light-pink: #C7C7C7;
     --white: #fff;
     --text-input: #F7F7F7;
+    --soft-blue: #3498DB;
 }
 
 * {
@@ -19,7 +20,7 @@ html {
     font-family: 'Quicksand', sans-serif;
 }
 
-.wrapper {
+.wrapper-login {
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -28,11 +29,11 @@ html {
     align-items: center;
 }
 
-.login-section, .header-section {
+.login-section, .header-section-login, .wrapper-recovery {
     text-align: center;
 }
 
-.header-section {
+.header-section-login {
     margin-top: 10em;
     margin-bottom: 4em;
 }
@@ -46,7 +47,7 @@ html {
     margin-bottom: 0.5em;
 }
 
-.login-section__input {
+.general-input {
     width: 90%;
     background-color: var(--text-input);
     color: #797979;
@@ -55,10 +56,13 @@ html {
     padding: 0.8em 0.7em;
     border-radius: 7px;
     border: none;
+}
+
+.login-section__input {
     margin-bottom: 1em;
 }
 
-.login-section__input:focus-visible {
+.general-input:focus-visible {
     outline: none;
 }
 
@@ -88,9 +92,15 @@ html {
 
 .login-section__message {
     display: inline-block;
+    text-decoration: none;
     font-size: 1.2rem;
     color: var(--hospital-green);
     margin-top: 3em;
+}
+
+.login-section__message:hover {
+    text-decoration: underline;
+    color: var(--soft-blue);
 }
 
 .login-section .green--btn {
@@ -99,4 +109,24 @@ html {
 
 .section-down .white--btn {
     margin-bottom: 3em;
+}
+
+
+/* Pass Recovery section */
+
+.header-section-recovery {
+    margin-top: 7em;
+    margin-bottom: 5em;
+}
+
+.recovery-text {
+    margin: 1em auto;
+    margin-bottom: 2em;
+    font-size: 1.4rem;
+    width: 80%;
+    color: #797979;
+}
+
+.login-section__recovery {
+    margin-bottom: 2em;
 }

@@ -6,7 +6,12 @@
     right: 15px;
 }
 
-.logo-icon {
+.header-section-login .logo-icon {
     width: 207px;
     height: 43px;
+}
+
+.header-section-recovery .logo-icon {
+    width: 148.8px;
+    height: 31px;
 }
