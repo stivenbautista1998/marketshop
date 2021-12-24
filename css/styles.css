@@ -1,0 +1,65 @@
+:root {
+    --background-color: #F2F2F2;
+    --dark: #232830;
+    --black: #000;
+    --hospital-green: #ACD9B2;
+    --very-light-pink: #C7C7C7;
+    --white: #fff;
+    --text-input: #F7F7F7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.login-section, .header-section {
+    text-align: center;
+}
+
+.header-section {
+    margin-top: 10em;
+    margin-bottom: 2em;
+}
+
+.login-section__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 0.5em;
+}
+
+.login-section__input {
+    width: 90%;
+    background-color: var(--text-input);
+    color: #797979;
+    font-size: 1.4rem;
+    font-weight: 400;
+    padding: 0.8em 0.7em;
+    border-radius: 7px;
+    border: none;
+    margin-bottom: 1em;
+}
+
+.login-section__input:focus-visible {
+    outline: none;
+}
+
+.login-section__btn {
+    width: 90%;
+    padding: 1em;
+    background-color: var(--hospital-green);
+    border: 1px solid var(--hospital-green);
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.0001);
+    border-radius: 10px;
+    color: var(--white);
+    font-size: 1.4rem;
+    margin-top: 1.5em;
+}
+

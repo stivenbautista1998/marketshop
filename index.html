@@ -5,17 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MarketShop</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/icon-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Roboto:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <header class="header-section">
         <nav>
-            <img src="./assets/icons/logo.svg" alt="logo of the webpage">
+            <img class="close-icon" src="./assets/icons/x-icon.svg" alt="close icon">
+            <img class="logo-icon" src="./assets/icons/logo.svg" alt="logo of the webpage">
         </nav>
     </header>
     <main class="login-section">
-        <label for="user-txt">Email address</label>
+        <label class="login-section__label" for="user-txt">Email address</label>
         <input class="login-section__input" id="user-txt" type="text">
-        <label for="password-txt">Password</label>
+        <label class="login-section__label" for="password-txt">Password</label>
         <input class="login-section__input" id="password-txt" type="password">
         <button id="login-btn" class="login-section__btn">
             Log in

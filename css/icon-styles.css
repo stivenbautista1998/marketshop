@@ -1,0 +1,12 @@
+.close-icon {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 20px;
+    right: 15px;
+}
+
+.logo-icon {
+    width: 207px;
+    height: 43px;
+}
