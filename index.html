@@ -12,20 +12,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Roboto:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header-section">
-        <nav>
-            <img class="close-icon" src="./assets/icons/x-icon.svg" alt="close icon">
-            <img class="logo-icon" src="./assets/icons/logo.svg" alt="logo of the webpage">
-        </nav>
-    </header>
-    <main class="login-section">
-        <label class="login-section__label" for="user-txt">Email address</label>
-        <input class="login-section__input" id="user-txt" type="text">
-        <label class="login-section__label" for="password-txt">Password</label>
-        <input class="login-section__input" id="password-txt" type="password">
-        <button id="login-btn" class="login-section__btn">
-            Log in
-        </button>
-    </main>
+    <div class="wrapper">
+        <div class="section-up">
+            <header class="header-section">
+                <nav>
+                    <img class="close-icon" src="./assets/icons/x-icon.svg" alt="close icon">
+                    <img class="logo-icon" src="./assets/icons/logo.svg" alt="logo of the webpage">
+                </nav>
+            </header>
+            <main class="login-section">
+                    <label class="login-section__label" for="user-txt">Email address</label>
+                    <input class="login-section__input" id="user-txt" type="text">
+                    <label class="login-section__label" for="password-txt">Password</label>
+                    <input class="login-section__input" id="password-txt" type="password">
+                    <button id="login-btn" class="general-button green--btn">
+                        Log in
+                    </button>
+                    <span class="login-section__message">Forgot my password</span>
+            </main>
+        </div>
+        <div class="section-down">
+            <button id="singup-btn" class="general-button white--btn">
+                Sign up
+            </button>
+        </div>
+    </div>
 </body>
 </html>
