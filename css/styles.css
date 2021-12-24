@@ -34,13 +34,15 @@ html {
 
 .header-section {
     margin-top: 10em;
-    margin-bottom: 2em;
+    margin-bottom: 4em;
 }
 
 .login-section__label {
+    float: left;
+    margin-left: 1.5em;
     font-size: 1.2rem;
     font-weight: 700;
-    display: inline-block;
+    /* display: inline-block; */
     margin-bottom: 0.5em;
 }
 
