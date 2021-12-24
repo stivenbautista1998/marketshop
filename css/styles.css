@@ -61,11 +61,8 @@ html {
 }
 
 .section-down {
-    /* height: 44vh;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding-bottom: 3em; */
+    width: 100%;
+    text-align: center;
 }
 
 .general-button {
