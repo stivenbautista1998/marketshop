@@ -137,3 +137,120 @@ a.grey__message:hover, a.green__message:hover {
 .login-section__recovery {
     margin-bottom: 2em;
 }
+
+.header-home-section {
+    text-align: center;
+    margin-bottom: 1.2em;
+}
+
+.header-home-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.4em;
+    box-shadow: 0px 2px 4px rgb(0 0 0 / 5%);
+}
+
+.header-home-section__search {
+    width: 80%;
+    background: transparent;
+    border: none;
+    color: #797979;
+    font-size: 1.4rem;
+}
+
+.header-home-section__search::placeholder {
+    color: #C7C7C7;
+}
+
+.header-home-section__search:focus-visible {
+    outline: none;
+}
+
+.center-search {
+    margin: 1em auto;
+    position: relative;
+}
+
+.header-home-section__list {
+    font-size: 1.2rem;
+    color: #C7C7C7;
+    margin-bottom: 1em;
+}
+
+.header-home-section__list-option {
+    display: inline-block;
+    margin: 0 .5em;
+}
+
+.selected {
+    border: 1px solid var(--hospital-green);
+    border-radius: 10px;
+    padding: 0.5em 1em;
+    color: var(--hospital-green);
+    font-weight: bold;
+}
+
+.header-home-section__text {
+    color: var(--black);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.header-home-section__order {
+    border: none;
+    font-size: 1.2rem;
+    color: #797979;
+}
+
+.header-home-section__order:focus-visible {
+    outline: none;
+}
+
+.article-section {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.article-section-item {
+    min-width: 140px;
+    margin-bottom: 2em;
+    display: inline-block;
+}
+
+.article-section-item__img {
+    border-radius: 10px;
+    height: 137px;
+    overflow: hidden;
+}
+
+.image-product {
+    width: 138px;
+    height: 137px;
+}
+
+.article-section-item__content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.price-product {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #404040;
+    width: 100%;
+}
+
+.name-product {
+    font-size: 1.1rem;
+    color: #797979;
+    font-weight: 300;
+}
+
+.name-product, .price-product {
+    margin-top: .3em;
+    display: block;
+}
