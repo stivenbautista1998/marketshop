@@ -172,9 +172,23 @@ a.grey__message:hover, a.green__message:hover {
 }
 
 .header-home-section__list {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: #C7C7C7;
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
     margin-bottom: 1em;
+    justify-content: center;
+    align-items: center;
+    overflow-x: scroll;
+}
+
+.header-home-section__list::-webkit-scrollbar { /* hidding the scrollbar */
+    width: 0;
+}
+
+.header-home-section__list-option:first-child.selected { /* margin left when the first child is selected */
+    margin-left: 2em;
 }
 
 .header-home-section__list-option {
@@ -253,4 +267,10 @@ a.grey__message:hover, a.green__message:hover {
 .name-product, .price-product {
     margin-top: .3em;
     display: block;
+}
+
+@media (min-width: 357px) {
+    .header-home-section__list-option:first-child.selected {
+        margin-left: 0;
+    }
 }
