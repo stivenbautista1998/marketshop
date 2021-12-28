@@ -1,4 +1,9 @@
-var btnHomeMenu = null;
+var btnHomeMenu = null, userData = null;
+var users = fetch("../data/users.json")
+.then(data => data.json())
+.then(result => {
+    userData = result.login[0];
+});
 
 window.addEventListener("load", function() {
     /* console.log(window.location.href); */
@@ -30,13 +35,17 @@ window.addEventListener("load", function() {
 
 function addToCardBtn(myElement) {
     const father = myElement.parentElement;
+    const article = father.parentElement;
     
     if(father.classList[1] == "clickedBtn") {
         father.classList.remove("clickedBtn");
         myElement.setAttribute('src', "../assets/icons/add_to_cart.svg");
+        let filteredProducts = userData.currentSelectedProducts.filter((item) => item.idProduct != article.dataset.product);
+        userData.currentSelectedProducts = filteredProducts;
     } else {
         father.classList.add("clickedBtn");
         myElement.setAttribute('src', "../assets/icons/selected-to-buy.svg");
+        userData.currentSelectedProducts.push({ idProduct: article.dataset.product });
     }
 }
 
