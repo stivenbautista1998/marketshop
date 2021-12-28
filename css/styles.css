@@ -207,6 +207,10 @@ a.grey__message:hover, a.green__message:hover {
     width: 0;
 }
 
+.header-home-section__list-option:first-child {
+    margin-left: 7em;
+}
+
 .header-home-section__list-option:first-child.selected { /* margin left when the first child is selected */
     margin-left: 6em;
 }
@@ -359,7 +363,7 @@ a.grey__message:hover, a.green__message:hover {
 
 
 @media (min-width: 415px) {
-    .header-home-section__list-option:first-child.selected {
+    .header-home-section__list-option:first-child.selected, .header-home-section__list-option:first-child {
         margin-left: 0;
     }
 }

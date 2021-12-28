@@ -49,3 +49,11 @@ function hideMenu() {
     btnHomeMenu.classList.remove("menu-active");
     document.body.style.overflow = "scroll";
 }
+
+function handleHomeList(myElement) {
+    if(!myElement.classList[1]) { // execute the code when the item clicked is not selected.
+        const oldSelectedItem = document.getElementsByClassName("selected");
+        oldSelectedItem[0].classList.remove("selected");
+        myElement.classList.add("selected");
+    }
+}
