@@ -23,6 +23,54 @@
                 }
             ],
             "description": "With its functional and practical interior, this refrigerator also fulfills a decorative function, adding personality and a retro-vintage aesthetic to your kitchen or workplace."
+        },
+        {
+            "id": "n3202",
+            "name": "Round shelf",
+            "price": 120,
+            "imgs": [
+                {
+                    "img": "../assets/img/round_shelf.jpeg",
+                    "size": "small"
+                }
+            ],
+            "description": " Screw holes are pre-drilled on the wooden board to install wooden board to the metal ring. To balance the wooden board, two additional wall screws behind the board are used for support. You need a screw driver or a power drill to put the shelf up on wall."
+        },
+        {
+            "id": "n3203",
+            "name": "Retro refrigerator",
+            "price": 153,
+            "imgs": [
+                {
+                    "img": "../assets/img/bitmap.jpeg",
+                    "size": "small"
+                }
+            ],
+            "description": "With its functional and practical interior, this refrigerator also fulfills a decorative function, adding personality and a retro-vintage aesthetic to your kitchen or workplace."
+        },
+        {
+            "id": "n3204",
+            "name": "Round shelf",
+            "price": 120,
+            "imgs": [
+                {
+                    "img": "../assets/img/round_shelf.jpeg",
+                    "size": "small"
+                }
+            ],
+            "description": " Screw holes are pre-drilled on the wooden board to install wooden board to the metal ring. To balance the wooden board, two additional wall screws behind the board are used for support. You need a screw driver or a power drill to put the shelf up on wall."
+        },
+        {
+            "id": "n3205",
+            "name": "Retro refrigerator",
+            "price": 153,
+            "imgs": [
+                {
+                    "img": "../assets/img/bitmap.jpeg",
+                    "size": "small"
+                }
+            ],
+            "description": "With its functional and practical interior, this refrigerator also fulfills a decorative function, adding personality and a retro-vintage aesthetic to your kitchen or workplace."
         }
     ]
 }

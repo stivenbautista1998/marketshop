@@ -362,6 +362,47 @@ a.grey__message:hover, a.green__message:hover {
 }
 
 
+@media (min-width: 430px) {
+    .wrapper-login {
+        justify-content: unset;
+        align-items: unset;
+    }
+
+    .header-section-login {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 400px;
+    }
+
+    .login-section, .header-section-login, .wrapper-recovery {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 400px;
+    }
+
+    .login-section .green--btn {
+        width: 400px;
+    }
+
+    .section-down .white--btn {
+        width: 400px;
+    }
+
+    .general-input {
+        width: 100%;
+    }
+
+    .general-button.white--btn {
+        margin-top: 2.5em;
+    }
+
+    .login-section__label {
+        margin-left: 0;
+    }
+
+}
+
+
 @media (min-width: 415px) {
     .header-home-section__list-option:first-child.selected, .header-home-section__list-option:first-child {
         margin-left: 0;
