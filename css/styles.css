@@ -78,6 +78,7 @@ html {
     border-radius: 10px;
     font-size: 1.4rem;
     border: 1px solid var(--hospital-green);
+    cursor: pointer;
 }
 
 .green--btn {
@@ -400,6 +401,9 @@ a.grey__message:hover, a.green__message:hover {
         margin-left: 0;
     }
 
+    .general-button {
+        width: 100%;
+    }
 }
 
 
