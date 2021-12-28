@@ -1,6 +1,6 @@
+var btnHomeMenu = null;
 
 window.addEventListener("load", function() {
-    console.log("working!!");
     /* console.log(window.location.href); */
     if(window.location.href == "http://127.0.0.1:5500/index.html") {
         const btnLogin = this.document.getElementById("login-btn");
@@ -12,8 +12,8 @@ window.addEventListener("load", function() {
 
     if(window.location.href == "http://127.0.0.1:5500/views/home.html") {
         const homeSearch = this.document.querySelector(".search-home-section");
-        /* const addToCardBtn = this.document.getElementsByClassName("add_to_card");
-        console.log(addToCardBtn[0]); */
+        btnHomeMenu = this.document.getElementById("js-menu-tab");
+        
         let lastScrollY = window.scrollY;
 
         window.addEventListener("scroll", () => {
@@ -38,4 +38,14 @@ function addToCardBtn(myElement) {
         father.classList.add("clickedBtn");
         myElement.setAttribute('src', "../assets/icons/selected-to-buy.svg");
     }
+}
+
+function showMenu() {
+    btnHomeMenu.classList.add("menu-active");
+    document.body.style.overflow = "hidden";
+}
+
+function hideMenu() {
+    btnHomeMenu.classList.remove("menu-active");
+    document.body.style.overflow = "scroll";
 }

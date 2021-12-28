@@ -13,9 +13,31 @@
     <script src="../js/script.js"></script>
 </head>
 <body>
+    <div id="js-menu-tab" class="menu-tab">
+        <img onclick="hideMenu()" class="close-icon" src="../assets/icons/x-icon.svg" alt="close icon">
+        <div>
+            <h2 class="menu-tab__tittle">CATEGORIES</h2>
+            <ul class="menu-tab__main-list">
+                <li class="menu-tab__main-list__item">All</li>
+                <li class="menu-tab__main-list__item">Clothes</li>
+                <li class="menu-tab__main-list__item">Electronics</li>
+                <li class="menu-tab__main-list__item">Furnitures</li>
+                <li class="menu-tab__main-list__item">Toys</li>
+                <li class="menu-tab__main-list__item">Others</li>
+            </ul>
+            <ul class="menu-tab__logged">
+                <li class="menu-tab__logged__item">My orders</li>
+                <li class="menu-tab__logged__item">My account</li>
+            </ul>
+        </div>
+        <div>
+            <span class="menu-tab__email">stivenb1994@gmail.com</span>
+            <a href="../index.html" class="menu-tab__loggin">Sign out</a>
+        </div>
+    </div>
     <header class="header-home-section">
         <nav class="header-home-nav">
-            <img class="menu-icon" src="../assets/icons/menu-icon.svg" alt="menu icon">
+            <img class="menu-icon" onclick="showMenu()" src="../assets/icons/menu-icon.svg" alt="menu icon">
             <a href="../index.html"><img class="logo-icon-small" src="../assets/icons/logo.svg" alt="logo of the webpage"></a>
             <img class="shopping-cart" src="../assets/icons/shopping-cart.svg" alt="icon of a shopping cart">
         </nav>
@@ -29,6 +51,7 @@
             <li class="header-home-section__list-option">Electronics</li>
             <li class="header-home-section__list-option">Furniture</li>
             <li class="header-home-section__list-option">Toys</li>
+            <li class="header-home-section__list-option">Others</li>
         </ul>
         <span class="header-home-section__text">Order:</span> 
         <select class="header-home-section__order" name="" id="">

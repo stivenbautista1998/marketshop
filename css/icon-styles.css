@@ -4,6 +4,7 @@
     height: 12px;
     top: 20px;
     right: 15px;
+    cursor: pointer;
 }
 
 .header-section-login .logo-icon {
@@ -30,6 +31,7 @@
 .menu-icon {
     width: 25px;
     height: 21px;
+    cursor: pointer;
 }
 
 .shopping-cart {
@@ -37,6 +39,7 @@
     height: 27px; */
     width: 25px;
     height: 21px;
+    cursor: pointer;
 }
 
 .search-icon {

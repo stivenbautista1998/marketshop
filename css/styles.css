@@ -208,7 +208,7 @@ a.grey__message:hover, a.green__message:hover {
 }
 
 .header-home-section__list-option:first-child.selected { /* margin left when the first child is selected */
-    margin-left: 2em;
+    margin-left: 6em;
 }
 
 .header-home-section__list-option {
@@ -290,10 +290,6 @@ a.grey__message:hover, a.green__message:hover {
     display: block;
 }
 
-/* .box_add_to_card {
-    position: relative;
-} */
-
 .clickedBtn .circle-border {
     position: absolute;
     box-shadow: 0px 0px 10px rgb(0 0 0 / 12%);
@@ -303,7 +299,66 @@ a.grey__message:hover, a.green__message:hover {
     top: 5px;
 }
 
-@media (min-width: 357px) {
+.menu-tab {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    padding: 4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    background-color: var(--white);
+    transform: translateX(-100vw);
+    transition: transform .2s;
+}
+
+.menu-active {
+    transform: translateX(0);
+}
+
+.menu-tab__tittle {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 2.85em;
+}
+
+.menu-tab__main-list, .menu-tab__logged {
+    list-style-type: none;
+    font-size: 1.3rem;
+    font-weight: 700;
+    border-bottom: 1px solid rgba(151, 151, 151, 0.1);
+    margin-bottom: 2.85em;
+}
+
+.menu-tab__main-list__item, .menu-tab__logged__item {
+    margin-bottom: 2.85em;
+}
+
+.menu-tab__logged {
+    border-bottom: none;
+}
+
+.menu-tab__email {
+    font-weight: 300;
+}
+
+.menu-tab__loggin {
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--hospital-green);
+}
+
+.menu-tab__loggin, .menu-tab__email {
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: .5em;
+}
+
+
+@media (min-width: 415px) {
     .header-home-section__list-option:first-child.selected {
         margin-left: 0;
     }
