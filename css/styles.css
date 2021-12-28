@@ -188,7 +188,7 @@ a.grey__message:hover, a.green__message:hover {
 }
 
 .search--hidden {
-    transform: translateY(-68.38px); /* moves the element in the Y axis */
+    transform: translateY(-68px); /* moves the element in the Y axis */
 }
 
 .header-home-section__list {
@@ -268,6 +268,7 @@ a.grey__message:hover, a.green__message:hover {
 .article-section-item__content {
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 
 .price-product {
@@ -287,6 +288,19 @@ a.grey__message:hover, a.green__message:hover {
 .name-product, .price-product {
     margin-top: .3em;
     display: block;
+}
+
+/* .box_add_to_card {
+    position: relative;
+} */
+
+.clickedBtn .circle-border {
+    position: absolute;
+    box-shadow: 0px 0px 10px rgb(0 0 0 / 12%);
+    border-radius: 50%;
+    padding: 17px;
+    right: 3px;
+    top: 5px;
 }
 
 @media (min-width: 357px) {
