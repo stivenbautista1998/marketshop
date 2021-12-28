@@ -141,7 +141,8 @@ a.grey__message:hover, a.green__message:hover {
 .header-home-section {
     text-align: center;
     margin-bottom: 1.2em;
-    padding-top: 5em;
+    padding-top: 12em;
+    position: relative;
 }
 
 .header-home-nav {
@@ -176,6 +177,18 @@ a.grey__message:hover, a.green__message:hover {
 .center-search {
     margin: 1em auto;
     position: relative;
+}
+
+.search-home-section {
+    position: fixed;
+    z-index: 6;
+    top: 50px;
+    left: 5%;
+    transition: transform .2s; /* time of transitions */
+}
+
+.search--hidden {
+    transform: translateY(-68.38px); /* moves the element in the Y axis */
 }
 
 .header-home-section__list {

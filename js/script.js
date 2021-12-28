@@ -11,16 +11,16 @@ window.addEventListener("load", function() {
     }
 
     if(window.location.href == "http://127.0.0.1:5500/views/home.html") {
-        const homeNav = this.document.getElementById("home-nav");
-
+        const homeSearch = this.document.querySelector(".search-home-section");
         let lastScrollY = window.scrollY;
+
         window.addEventListener("scroll", () => {
             if(lastScrollY < window.scrollY) {
                 console.log("going down");
-                homeNav.classList.add("list--hidden");
+                homeSearch.classList.add("search--hidden");
             } else {
                 console.log("going up");
-                homeNav.classList.remove("list--hidden");
+                homeSearch.classList.remove("search--hidden");
             }
 
             lastScrollY = window.scrollY;
