@@ -115,7 +115,7 @@ a.grey__message:hover, a.green__message:hover {
     margin-top: 1.5em;
 }
 
-.section-down .white--btn {
+.section-down .white--btn, .section-down .green--btn {
     margin-bottom: 3em;
 }
 
@@ -362,6 +362,18 @@ a.grey__message:hover, a.green__message:hover {
     margin-bottom: .5em;
 }
 
+.myaccount-tittle {
+    text-align: left;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 2em;
+    margin-bottom: 3em;
+}
+
+.no-fixed {
+    position: relative;
+}
+
 
 @media (min-width: 430px) {
     .wrapper-login {
@@ -385,7 +397,7 @@ a.grey__message:hover, a.green__message:hover {
         width: 400px;
     }
 
-    .section-down .white--btn {
+    .section-down .white--btn, .section-down .green--btn {
         width: 400px;
     }
 
@@ -393,7 +405,7 @@ a.grey__message:hover, a.green__message:hover {
         width: 100%;
     }
 
-    .general-button.white--btn {
+    .general-button.white--btn, .general-button.green--btn {
         margin-top: 2.5em;
     }
 
@@ -402,6 +414,10 @@ a.grey__message:hover, a.green__message:hover {
     }
 
     .general-button {
+        width: 100%;
+    }
+
+    .myaccount-tittle {
         width: 100%;
     }
 }

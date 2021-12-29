@@ -33,6 +33,14 @@ window.addEventListener("load", function() {
     }
 });
 
+function showMyAccount() {
+    window.location.href = "../views/my-account.html";
+}
+
+function showLogin() {
+    window.location.href = "../index.html";
+}
+
 function addToCardBtn(myElement) {
     const father = myElement.parentElement;
     const article = father.parentElement;
