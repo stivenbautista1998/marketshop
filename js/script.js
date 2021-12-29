@@ -1,4 +1,4 @@
-var btnHomeMenu = null, userData = null, btnShowShoppingCard = null;
+var btnHomeMenu = null, userData = null, btnShowShoppingCard = null, linkLogo, textLogo;
 var users = fetch("../data/users.json")
 .then(data => data.json())
 .then(result => {
@@ -19,6 +19,8 @@ window.addEventListener("load", function() {
         const homeSearch = this.document.querySelector(".search-home-section");
         btnHomeMenu = this.document.getElementById("js-menu-tab");
         btnShowShoppingCard = this.document.getElementById("js-shopping-card-tab");
+        linkLogo = this.document.getElementById("js-link-logo");
+        textLogo = this.document.getElementById("js-tittle-logo");
         
         let lastScrollY = window.scrollY;
 
@@ -79,9 +81,13 @@ function handleHomeList(myElement) {
 function showShoppingCard() {
     if(btnShowShoppingCard.classList[1] == "menu-active") {
         btnShowShoppingCard.classList.remove("menu-active");
-        document.body.style.overflow = "scroll";    
+        document.body.style.overflow = "scroll";
+        textLogo.classList.add("hide-logo");
+        linkLogo.classList.remove("hide-logo");
     } else {
         btnShowShoppingCard.classList.add("menu-active");
         document.body.style.overflow = "hidden";
+        linkLogo.classList.add("hide-logo");
+        textLogo.classList.remove("hide-logo");
     }
 }

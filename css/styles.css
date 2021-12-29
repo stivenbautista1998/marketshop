@@ -438,6 +438,10 @@ a.grey__message:hover, a.green__message:hover {
     transform: translateX(0);
 }
 
+.hide-logo {
+    display: none;
+}
+
 
 @media (min-width: 430px) {
     .wrapper-login {
