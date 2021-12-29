@@ -1,5 +1,5 @@
 var btnHomeMenu = null, userData = null, arrayProducts = [], btnShowShoppingCard = null, linkLogo, textLogo, 
-wrapperHomeShoppItems;
+wrapperHomeShoppItems, totalTable, lastIds = "";
 
 fetch("../data/users.json")
 .then(data => data.json())
@@ -31,6 +31,7 @@ window.addEventListener("load", function() {
         linkLogo = this.document.getElementById("js-link-logo");
         textLogo = this.document.getElementById("js-tittle-logo");
         wrapperHomeShoppItems =  this.document.getElementById("js-shopping-container-items");
+        totalTable = this.document.getElementById("js-shopping-total");
         
         let lastScrollY = window.scrollY;
 
@@ -104,38 +105,57 @@ function showShoppingCard() {
 }
 
 function showProductsSelected() {
-    let concatArticles = "";
-    let shoppingCardItems = userData.currentSelectedProducts.map(item => {
-        var infoProduct = null;
-        for(let obj in arrayProducts) {
-            if(arrayProducts[obj].id == item.idProduct) {
-                infoProduct = arrayProducts[obj];
-                console.log(infoProduct);
-                concatArticles += "<article class='shopping-card-item'>" +
-                                        "<div class='front-container'>" +
-                                            "<div class='image-border'>" +
-                                                "<img class='image-shopping-card' src='" + infoProduct.imgs[0].img + "' alt='image of product'>" +
+    let concatArticles = "", count = 0;
+
+    if(lastIds != getCurrentIds()) { // ask if the items had had any update.
+        lastIds = "";
+
+        for(let current in userData.currentSelectedProducts) {
+            var infoProduct = null;
+            let currentID = userData.currentSelectedProducts[current].idProduct;
+            lastIds += currentID;
+    
+            for(let obj in arrayProducts) {
+                if(arrayProducts[obj].id == currentID) {
+                    infoProduct = arrayProducts[obj];
+                    count += infoProduct.price;
+                    console.log(infoProduct);
+                    concatArticles += "<article class='shopping-card-item'>" +
+                                            "<div class='front-container'>" +
+                                                "<div class='image-border'>" +
+                                                    "<img class='image-shopping-card' src='" + infoProduct.imgs[0].img + "' alt='image of product'>" +
+                                                "</div>" +
+                                                "<span class='name-product'>" + infoProduct.name + "</span>" +
                                             "</div>" +
-                                            "<span class='name-product'>" + infoProduct.name + "</span>" +
-                                        "</div>" +
-                                        "<div class='back-container'>" +
-                                            "<span class='price-product'>$ " + infoProduct.price + ",00</span>" +
-                                            "<img onclick='deleteItem(this)' data-product='" + infoProduct.id + "' class='close-icon close-item' src='../assets/icons/x-icon.svg' alt='close item'>" +
-                                        "</div>" +
-                                    "</article>";
-                break;
+                                            "<div class='back-container'>" +
+                                                "<span class='price-product'>$ " + infoProduct.price + ",00</span>" +
+                                                "<img onclick='deleteItem(this)' data-product='" + infoProduct.id + "' class='close-icon close-item' src='../assets/icons/x-icon.svg' alt='close item'>" +
+                                            "</div>" +
+                                        "</article>";
+                    break;
+                }
             }
         }
-        return concatArticles;
-    });
-    wrapperHomeShoppItems.innerHTML = concatArticles;
+        console.log(lastIds);
+        wrapperHomeShoppItems.innerHTML = concatArticles;
+        totalTable.innerHTML = "$ " + count + ",00";
+    }
 }
 
-function deleteItem(idElement) {
-    console.log("It works");
+function deleteItem(myItem) {
+    let itemID = myItem.dataset.product;
+    let newFilter = userData.currentSelectedProducts.filter(item => item.idProduct != itemID);
+    /* userData.currentSelectedProducts = newFilter;
+    showProductsSelected(); */
 }
 
 
-
+function getCurrentIds() {
+    let stringIds = "";
+    for(let current in userData.currentSelectedProducts) {
+        stringIds +=  userData.currentSelectedProducts[current].idProduct;
+    }
+    return stringIds;
+}
 
 
