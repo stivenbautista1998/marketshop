@@ -35,11 +35,48 @@
             <a href="../index.html" class="menu-tab__loggin">Sign out</a>
         </div>
     </div>
+    <div id="js-shopping-card-tab" class="shopping-card-tab">
+        <div class="shopping-card-top">
+            <article class="shopping-card-item">
+                <div class="front-container">
+                    <div class="image-border">
+                        <img class="image-shopping-card" src="../assets/img/round_shelf.jpeg" alt="image of product">
+                    </div>
+                    <span class="name-product">Round shelf</span>
+                </div>
+                <div class="back-container">
+                    <span class="price-product">$ 120,00</span>
+                    <img onclick="" class="close-icon close-item" src="../assets/icons/x-icon.svg" alt="close item">
+                </div>
+            </article>
+            <article class="shopping-card-item">
+                <div class="front-container">
+                    <div class="image-border">
+                        <img class="image-shopping-card" src="../assets/img/round_shelf.jpeg" alt="image of product">
+                    </div>
+                    <span class="name-product">Round shelf</span>
+                </div>
+                <div class="back-container">
+                    <span class="price-product">$ 120,00</span>
+                    <img onclick="" class="close-icon close-item" src="../assets/icons/x-icon.svg" alt="close item">
+                </div>
+            </article>
+        </div>
+        <div class="shopping-card-bottom">
+            <div class="shopping-card-total">
+                <span class="login-section__label shopping-card-total__text">Total</span>
+                <span class="price-product shopping-card-total__price">$ 560.00</span>
+            </div>
+            <button id="checkout-btn" class="general-button green--btn">
+                Checkout
+            </button>
+        </div>
+    </div>
     <header class="header-home-section">
         <nav class="header-home-nav">
             <img class="menu-icon" onclick="showMenu()" src="../assets/icons/menu-icon.svg" alt="menu icon">
             <a href="../index.html"><img class="logo-icon-small" src="../assets/icons/logo.svg" alt="logo of the webpage"></a>
-            <img class="shopping-cart" src="../assets/icons/shopping-cart.svg" alt="icon of a shopping cart">
+            <img class="shopping-cart" onclick="showShoppingCard()" src="../assets/icons/shopping-cart.svg" alt="icon of a shopping cart">
         </nav>
         <div class="general-input center-search search-home-section">
             <img class="search-icon" src="../assets/icons/search-icon.svg" alt="search icon">

@@ -1,4 +1,4 @@
-var btnHomeMenu = null, userData = null;
+var btnHomeMenu = null, userData = null, btnShowShoppingCard = null;
 var users = fetch("../data/users.json")
 .then(data => data.json())
 .then(result => {
@@ -18,6 +18,7 @@ window.addEventListener("load", function() {
     if(window.location.href == "http://127.0.0.1:5500/views/home.html") {
         const homeSearch = this.document.querySelector(".search-home-section");
         btnHomeMenu = this.document.getElementById("js-menu-tab");
+        btnShowShoppingCard = this.document.getElementById("js-shopping-card-tab");
         
         let lastScrollY = window.scrollY;
 
@@ -72,5 +73,15 @@ function handleHomeList(myElement) {
         const oldSelectedItem = document.getElementsByClassName("selected");
         oldSelectedItem[0].classList.remove("selected");
         myElement.classList.add("selected");
+    }
+}
+
+function showShoppingCard() {
+    if(btnShowShoppingCard.classList[1] == "menu-active") {
+        btnShowShoppingCard.classList.remove("menu-active");
+        document.body.style.overflow = "scroll";    
+    } else {
+        btnShowShoppingCard.classList.add("menu-active");
+        document.body.style.overflow = "hidden";
     }
 }

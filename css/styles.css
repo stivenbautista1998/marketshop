@@ -320,10 +320,6 @@ a.grey__message:hover, a.green__message:hover {
     transition: transform .2s;
 }
 
-.menu-active {
-    transform: translateX(0);
-}
-
 .menu-tab__tittle {
     font-size: 1.4rem;
     font-weight: 700;
@@ -372,6 +368,74 @@ a.grey__message:hover, a.green__message:hover {
 
 .no-fixed {
     position: relative;
+}
+
+.shopping-card-tab {
+    position: fixed;
+    width: 100vw;
+    height: 92.5vh;
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--white);
+    z-index: 8;
+    bottom: 0;
+    transform: translateX(100vw);
+    transition: transform .2s;
+}
+
+.shopping-card-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5em;
+}
+
+.front-container, .back-container {
+    display: flex;
+    align-items: center;
+}
+
+.front-container .name-product, .back-container .price-product {
+    margin-top: 0;
+}
+
+.image-border {
+    border-radius: 10px;
+    height: 68px;
+    display: inline-block;
+    overflow: hidden;
+    margin-right: 1.2em;
+}
+
+.image-shopping-card {
+    width: 69px;
+}
+
+.shopping-card-total {
+    height: 68px;
+    background: var(--text-input);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5em;
+}
+
+.shopping-card-total__price {
+    width: auto;
+    margin-top: 0;
+    margin-right: 1.3em;
+}
+
+.shopping-card-total__text {
+    float: unset;
+    margin-bottom: 0;
+}
+
+.menu-active {
+    transform: translateX(0);
 }
 
 

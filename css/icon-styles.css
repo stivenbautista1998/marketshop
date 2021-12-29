@@ -7,6 +7,12 @@
     cursor: pointer;
 }
 
+.close-item {
+    position: static;
+    display: inline-block;
+    margin-left: 1em;
+}
+
 .header-section-login .logo-icon {
     width: 207px;
     height: 43px;
