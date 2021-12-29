@@ -107,6 +107,10 @@ function showShoppingCard() {
 function showProductsSelected() {
     let concatArticles = "", count = 0;
 
+    if(getCurrentIds() == "") { // showing an image when there is no items to show.
+        wrapperHomeShoppItems.innerHTML = `<img class="noshop-icon" src="../assets/icons/noshop.svg" alt="image of shopping car">`;
+    }
+
     if(lastIds != getCurrentIds()) { // ask if the items had had any update.
         lastIds = "";
 
@@ -136,9 +140,11 @@ function showProductsSelected() {
                 }
             }
         }
-        console.log(lastIds);
-        wrapperHomeShoppItems.innerHTML = concatArticles;
-        totalTable.innerHTML = "$ " + count + ",00";
+        if(concatArticles != "") { // if there is a change show it in the screen
+            console.log(lastIds);
+            wrapperHomeShoppItems.innerHTML = concatArticles;
+            totalTable.innerHTML = "$ " + count + ",00";
+        }
     }
 }
 
