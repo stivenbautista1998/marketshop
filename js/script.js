@@ -1,5 +1,5 @@
 var btnHomeMenu = null, userData = null, arrayProducts = [], btnShowShoppingCard = null, linkLogo, textLogo, 
-wrapperHomeShoppItems, totalTable, lastIds = "";
+wrapperHomeShoppItems, totalTable, lastIds = "", inputsAccount;
 
 fetch("../data/users.json")
 .then(data => data.json())
@@ -45,10 +45,14 @@ window.addEventListener("load", function() {
             lastScrollY = window.scrollY;
         });
     }
+
+    if(window.location.href == "http://127.0.0.1:5500/views/my-account.html") {
+        inputsAccount = document.getElementsByClassName("general-input");
+    }
 });
 
 function showMyAccount() {
-    window.location.href = "../views/my-account.html";
+    window.location.href = "../views/create-account.html";
 }
 
 function showLogin() {
@@ -164,4 +168,20 @@ function getCurrentIds() {
     return stringIds;
 }
 
+function editAccount(myElement) {
+    if(myElement.innerHTML != "Save") {
+        myElement.innerHTML = "Save";
+        myElement.classList.remove("white--btn");
+        myElement.classList.add("green--btn");
+
+        for(let input in inputsAccount) {
+            inputsAccount[input].style.backgroundColor = "#F7F7F7";
+            inputsAccount[input].style.paddingLeft = ".7em";
+            inputsAccount[input].value = inputsAccount[input].placeholder;
+            inputsAccount[input].readOnly = false;
+        }
+    } else {
+        window.location.href = "../views/home.html";
+    }
+}
 

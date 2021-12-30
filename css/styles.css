@@ -20,7 +20,7 @@ html {
     font-family: 'Quicksand', sans-serif;
 }
 
-.wrapper-login {
+.wrapper-login, .wrapper-my-account {
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -29,7 +29,7 @@ html {
     align-items: center;
 }
 
-.login-section, .header-section-login, .wrapper-recovery {
+.login-section, .header-section-login, .wrapper-recovery, .main-my-account {
     text-align: center;
 }
 
@@ -111,7 +111,7 @@ a.grey__message:hover, a.green__message:hover {
     color: var(--soft-blue);
 }
 
-.login-section .green--btn {
+.login-section .green--btn, .main-my-account .green--btn {
     margin-top: 1.5em;
 }
 
@@ -442,9 +442,18 @@ a.grey__message:hover, a.green__message:hover {
     display: none;
 }
 
+.style-no-link {
+    text-decoration: none;
+    color: var(--black);
+}
+
+.main-my-account .login-section__input {
+    padding-left: 0;
+    background-color: var(--white)
+}
 
 @media (min-width: 430px) {
-    .wrapper-login {
+    .wrapper-login, .wrapper-my-account {
         justify-content: unset;
         align-items: unset;
     }
@@ -455,13 +464,13 @@ a.grey__message:hover, a.green__message:hover {
         max-width: 400px;
     }
 
-    .login-section, .header-section-login, .wrapper-recovery {
+    .login-section, .header-section-login, .wrapper-recovery, .main-my-account {
         margin-left: auto;
         margin-right: auto;
         max-width: 400px;
     }
 
-    .login-section .green--btn {
+    .login-section .green--btn, .main-my-account .green--btn {
         width: 400px;
     }
 
