@@ -452,6 +452,49 @@ a.grey__message:hover, a.green__message:hover {
     background-color: var(--white)
 }
 
+.header-my-orders, .header-my-order {
+    width: 100%;
+}
+
+.my-orders-section {
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 2em;
+}
+
+.header-my-order + .my-orders-section {
+    padding: 0 2em;
+}
+
+.nav--my-orders {
+    position: static;
+}
+
+.my-orders__item__date, .my-orders__item__amount {
+    display: block;
+    margin-top: 0;
+    margin-bottom: .3em;
+}
+
+.my-orders__item__amount {
+    font-size: 1.2rem;
+    font-weight: thin;
+    color: #404040;
+}
+
+.my-orders-section .shopping-card-item {
+    margin-bottom: 2.5em;
+}
+
+.my-orders-section .my-orders__item--special {
+    background-color: var(--text-input);
+    padding: 1.5em;
+    border-radius: 10px;
+    margin: 1.5em 0;
+}
+
 @media (min-width: 430px) {
     .wrapper-login, .wrapper-my-account {
         justify-content: unset;
@@ -470,11 +513,7 @@ a.grey__message:hover, a.green__message:hover {
         max-width: 400px;
     }
 
-    .login-section .green--btn, .main-my-account .green--btn {
-        width: 400px;
-    }
-
-    .section-down .white--btn, .section-down .green--btn {
+    .login-section .green--btn, .main-my-account .green--btn, .section-down .white--btn, .section-down .green--btn {
         width: 400px;
     }
 
