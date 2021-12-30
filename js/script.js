@@ -113,6 +113,7 @@ function showProductsSelected() {
 
     if(getCurrentIds() == "") { // showing an image when there is no items to show.
         wrapperHomeShoppItems.innerHTML = `<img class="noshop-icon" src="../assets/icons/noshop.svg" alt="image of shopping car">`;
+        totalTable.innerHTML = "$ 0,00";
     }
 
     if(lastIds != getCurrentIds()) { // ask if the items had had any update.
