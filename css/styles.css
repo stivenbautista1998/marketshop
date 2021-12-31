@@ -403,10 +403,15 @@ a.grey__message:hover, a.green__message:hover {
 
 .image-border {
     border-radius: 10px;
-    height: 68px;
     display: inline-block;
     overflow: hidden;
     margin-right: 1.2em;
+    width: 69px;
+    height: 68px;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .image-shopping-card {
@@ -493,6 +498,15 @@ a.grey__message:hover, a.green__message:hover {
     padding: 1.5em;
     border-radius: 10px;
     margin: 1.5em 0;
+}
+
+.new-img {
+    width: 138px;
+    height: 137px;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover;
 }
 
 @media (min-width: 430px) {

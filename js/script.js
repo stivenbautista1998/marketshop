@@ -1,5 +1,5 @@
 var btnHomeMenu = null, userData = null, arrayProducts = [], btnShowShoppingCard = null, linkLogo, textLogo, 
-wrapperHomeShoppItems, totalTable, lastIds = "", inputsAccount;
+wrapperHomeShoppItems, totalTable, lastIds = "", inputsAccount, wrapperProducts;
 
 fetch("../data/users.json")
 .then(data => data.json())
@@ -32,9 +32,10 @@ window.addEventListener("load", function() {
         textLogo = this.document.getElementById("js-tittle-logo");
         wrapperHomeShoppItems =  this.document.getElementById("js-shopping-container-items");
         totalTable = this.document.getElementById("js-shopping-total");
+        wrapperProducts = document.getElementById("js-products-container");
+        loadProducts();
         
         let lastScrollY = window.scrollY;
-
         window.addEventListener("scroll", () => {
             if(lastScrollY < window.scrollY) {
                 homeSearch.classList.add("search--hidden");
@@ -108,6 +109,30 @@ function showShoppingCard() {
     }
 }
 
+function loadProducts() {
+    console.log("testing");
+    let infoProduct = null, concatArticles = "";
+
+    for(let productItem in arrayProducts) {
+        infoProduct = arrayProducts[productItem];
+        console.log(infoProduct);
+
+        concatArticles += `<article data-product="${infoProduct.id}" class="article-section-item">
+                                <div class="article-section-item__img new-img" style="background-image: url('${infoProduct.imgs[0].img}');">
+                                </div>
+                                <div class="article-section-item__content">
+                                    <div class="card-text">
+                                        <span class="grey__message price-product">$${infoProduct.price},00</span>
+                                        <span class="green__message name-product">${infoProduct.name}</span>
+                                    </div>
+                                    <div class="circle-border"></div>
+                                    <img class="add_to_card" onclick="addToCardBtn(this)" src="../assets/icons/add_to_cart.svg" alt="image of a shopping car">
+                                </div>
+                            </article>`;
+    }
+    wrapperProducts.innerHTML = concatArticles;
+}
+
 function showProductsSelected() {
     let concatArticles = "", count = 0;
 
@@ -131,9 +156,7 @@ function showProductsSelected() {
                     console.log(infoProduct);
                     concatArticles += "<article class='shopping-card-item'>" +
                                             "<div class='front-container'>" +
-                                                "<div class='image-border'>" +
-                                                    "<img class='image-shopping-card' src='" + infoProduct.imgs[0].img + "' alt='image of product'>" +
-                                                "</div>" +
+                                                "<div class='image-border' style='background-image: url(" + infoProduct.imgs[0].img + ");'></div>" +
                                                 "<span class='name-product'>" + infoProduct.name + "</span>" +
                                             "</div>" +
                                             "<div class='back-container'>" +
