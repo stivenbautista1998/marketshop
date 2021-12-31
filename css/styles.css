@@ -386,7 +386,7 @@ a.grey__message:hover, a.green__message:hover {
 }
 
 .menu-tab + .product-detail-tab {
-    height: 92vh;
+    /* height: 92vh; */
     padding: 0;
     transform: translateY(100vh);
 }
@@ -522,6 +522,10 @@ a.grey__message:hover, a.green__message:hover {
 .menu-active + .header-home-section .header-home-nav {
     border-bottom: 1px solid var(--background-color);
 }
+
+/* .menu-active + .header-home-section .header-home-nav {
+    border-bottom: 1px solid var(--background-color);
+} */
 
 .product-detail-img {
     width: 320px;

@@ -6,32 +6,32 @@
             "price": 1299,
             "imgs": [
                 {
-                    "img": "../assets/img/imac-img.jpeg",
-                    "size": "small"
+                    "img": "../assets/img/imac.jpeg",
+                    "size": "normal"
                 }
             ],
             "description": "The 27-inch iMac comes packed with powerful tools and apps that allow you to put your creativity to dream."
         },
         {
             "id": "n3201",
-            "name": "Earphones",
+            "name": "earphones",
             "price": 125,
             "imgs": [
                 {
                     "img": "../assets/img/earphones.jpeg",
-                    "size": "small"
+                    "size": "normal"
                 }
             ],
             "description": "Active Noise Cancellation. Enjoy immersive sound. Environment mode. Hear what's going on around you. Customizable fit. Wear them all day in comfort. Really magical sound."
         },
         {
             "id": "n3202",
-            "name": "Tablet",
+            "name": "tablet",
             "price": 375,
             "imgs": [
                 {
                     "img": "../assets/img/tablet.jpeg",
-                    "size": "small"
+                    "size": "normal"
                 }
             ],
             "description": "The perfect portable companion for taking notes. It features a large 10.4-inch screen, a slim and light design, One UI 2 on Android, and an S Pen included and ready to go."
@@ -43,7 +43,7 @@
             "imgs": [
                 {
                     "img": "../assets/img/shoes.jpeg",
-                    "size": "small"
+                    "size": "normal"
                 }
             ],
             "description": "Breathable Mesh: Using breathable mesh that not only guarantees its lightness and fashion, but also guarantees the comfort of the product, allows you not to feel heavy after hard work."
@@ -55,7 +55,7 @@
             "imgs": [
                 {
                     "img": "../assets/img/macbook.jpeg",
-                    "size": "small"
+                    "size": "normal"
                 }
             ],
             "description": "Apple-designed M1 chip for a giant leap in CPU, GPU, and machine learning performance. Get more done with up to 20 hours of battery life - the longest ever on a Mac."
@@ -67,7 +67,7 @@
             "imgs": [
                 {
                     "img": "../assets/img/camera1.jpeg",
-                    "size": "small"
+                    "size": "normal"
                 }
             ],
             "description": "It has a 2.4-inch screen and contains a large-capacity lithium battery, which reduces weight and provides sufficient battery life for the camera."
@@ -79,7 +79,7 @@
             "imgs": [
                 {
                     "img": "../assets/img/bitmap.jpeg",
-                    "size": "small"
+                    "size": "normal"
                 }
             ],
             "description": "With its functional and practical interior, this refrigerator also fulfills a decorative function, adding personality and a retro-vintage aesthetic to your kitchen or workplace."
@@ -91,7 +91,7 @@
             "imgs": [
                 {
                     "img": "../assets/img/iphone.jpeg",
-                    "size": "small"
+                    "size": "normal"
                 }
             ],
             "description": "The OLED screen is 28% brighter, up to 800 nits, so everything is easier to see in bright sunlight. And in the case of HDR content, the brightness reaches up to 1,200 nits."
@@ -103,7 +103,15 @@
             "imgs": [
                 {
                     "img": "../assets/img/round_shelf.jpeg",
-                    "size": "small"
+                    "size": "normal"
+                },
+                {
+                    "img": "../assets/img/round_shelf1.jpeg",
+                    "size": "normal"
+                },
+                {
+                    "img": "../assets/img/round_shelf2.jpeg",
+                    "size": "normal"
                 }
             ],
             "description": "SIZE MATTERS - Our FirsTime & Co. Brody Industrial Circle Shelf is 27.5 inches in diameter and 6 inches deep, making it a roomy size for storing your belongings in style."
@@ -115,7 +123,7 @@
             "imgs": [
                 {
                     "img": "../assets/img/watch.jpeg",
-                    "size": "small"
+                    "size": "normal"
                 }
             ],
             "description": "Refined design for sophistication on your wrist, with high-end stainless steel materials, powerful and intuitive to use."
