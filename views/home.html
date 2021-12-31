@@ -35,6 +35,31 @@
             <a href="../index.html" class="menu-tab__loggin">Sign out</a>
         </div>
     </div>
+    <div id="js-product-detail" class="product-detail-tab">
+        <div class="">
+            <div id="js-detail-img" class="new-img product-detail-img">
+                <div class="wrapper-close-btn"></div>
+                <img onclick="hideProductDetail()" class="close-icon" src="../assets/icons/x-icon.svg" alt="close icon">
+                <div class="points-wrapper">
+                    <div class="point selected-point"></div>
+                    <div class="point"></div>
+                    <div class="point"></div>
+                </div>
+            </div>
+            
+            <div class="product-detail-info">
+                <span id="js-detail-price" class="price-product">$ 120,00</span>
+                <h3 id="js-detail-tittle" class="recovery-text">Retro refrigerator</h3>
+                <p id="js-detail-descrip" class="recovery-text">With its functional and practical interior, this refrigerator also fulfills a decorative function, adding personality and a retro-vintage aesthetic</p>
+            </div>
+        </div>
+        <div class="product-detail-buttom">
+            <button id="checkout-btn" class="general-button green--btn">
+                <img class="normal--size" src="../assets/icons/shopping-icon.svg" alt="image of shopping car">
+                Add to cart
+            </button>
+        </div>
+    </div>
     <div id="js-shopping-card-tab" class="shopping-card-tab">
         <div id="js-shopping-container-items" class="shopping-card-top"></div> <!-- section where insert the items -->
         <div class="shopping-card-bottom">

@@ -1,5 +1,6 @@
 var btnHomeMenu = null, userData = null, arrayProducts = [], btnShowShoppingCard = null, linkLogo, textLogo, 
-wrapperHomeShoppItems, totalTable, lastIds = "", inputsAccount, wrapperProducts;
+wrapperHomeShoppItems, totalTable, lastIds = "", inputsAccount, wrapperProducts, productDetailWrapper;
+var detailImgProduct, detailPriceProduct, detailTittleProduct, detailDescripProduct, previousId = "";
 
 fetch("../data/users.json")
 .then(data => data.json())
@@ -31,6 +32,12 @@ window.addEventListener("load", function() {
         wrapperHomeShoppItems =  this.document.getElementById("js-shopping-container-items");
         totalTable = this.document.getElementById("js-shopping-total");
         wrapperProducts = document.getElementById("js-products-container");
+        productDetailWrapper = document.getElementById("js-product-detail");
+
+        detailImgProduct = document.getElementById("js-detail-img");
+        detailPriceProduct = document.getElementById("js-detail-price");
+        detailTittleProduct = document.getElementById("js-detail-tittle");
+        detailDescripProduct = document.getElementById("js-detail-descrip");
         loadProducts();
         
         let lastScrollY = window.scrollY;
@@ -116,7 +123,7 @@ function loadProducts() {
         console.log(infoProduct);
 
         concatArticles += `<article data-product="${infoProduct.id}" class="article-section-item">
-                                <div class="article-section-item__img new-img" style="background-image: url('${infoProduct.imgs[0].img}');">
+                                <div onclick="showProductDetails('${infoProduct.id}')" class="article-section-item__img new-img" style="background-image: url('${infoProduct.imgs[0].img}');">
                                 </div>
                                 <div class="article-section-item__content">
                                     <div class="card-text">
@@ -211,3 +218,23 @@ function showDetails() {
     window.location.href = "http://127.0.0.1:5500/views/my-order.html";
 }
 
+
+function showProductDetails(idProduct) {
+    console.log(idProduct);
+    if(idProduct != previousId) {
+        const productInfo = arrayProducts.filter(item => item.id == idProduct);
+        detailImgProduct.style.backgroundImage = `url('${productInfo[0].imgs[0].img}')`;
+        detailPriceProduct.innerHTML = `$ ${productInfo[0].price},00`;
+        detailTittleProduct.innerHTML = productInfo[0].name;
+        detailDescripProduct.innerHTML = productInfo[0].description;
+        previousId = productInfo[0].id;
+        console.log("diferente!!");
+    }
+    productDetailWrapper.classList.add("show-product-detail");
+    document.body.style.overflow = "hidden";
+}
+
+function hideProductDetail() {
+    productDetailWrapper.classList.remove("show-product-detail");
+    document.body.style.overflow = "scroll";
+}

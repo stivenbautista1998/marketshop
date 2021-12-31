@@ -370,7 +370,7 @@ a.grey__message:hover, a.green__message:hover {
     position: relative;
 }
 
-.shopping-card-tab {
+.shopping-card-tab, .product-detail-tab {
     position: fixed;
     width: 100vw;
     height: 92.9vh; /* 1px left for border of nav */
@@ -383,6 +383,16 @@ a.grey__message:hover, a.green__message:hover {
     bottom: 0;
     transform: translateX(100vw);
     transition: transform .2s;
+}
+
+.menu-tab + .product-detail-tab {
+    height: 92vh;
+    padding: 0;
+    transform: translateY(100vh);
+}
+
+.menu-tab + .show-product-detail {
+    transform: translateY(0);
 }
 
 .shopping-card-item {
@@ -511,6 +521,62 @@ a.grey__message:hover, a.green__message:hover {
 
 .menu-active + .header-home-section .header-home-nav {
     border-bottom: 1px solid var(--background-color);
+}
+
+.product-detail-img {
+    width: 320px;
+    height: 320px;
+    margin: 0 auto;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    position: relative;
+}
+
+.product-detail-info {
+    padding: 1.5em;
+}
+
+.product-detail-tab .recovery-text {
+    margin: 1em 0;
+    width: 100%;
+    max-height: 90px;
+}
+
+.product-detail-buttom {
+    text-align: center;
+    padding: 1.5em;
+}
+
+.product-detail-tab .general-button {
+    font-size: 1.5rem;
+}
+
+.points-wrapper {
+    position: absolute;
+    bottom: -15px;
+    left: calc(50% - 13px);
+}
+
+.point {
+    width: 7px;
+    height: 7px;
+    background-color: var(--background-color);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.selected-point {
+    background-color: var(--hospital-green);
+}
+
+.wrapper-close-btn {
+    background-color: var(--background-color);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: 16px;
+    right: 11px;
 }
 
 @media (min-width: 430px) {

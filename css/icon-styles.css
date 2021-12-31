@@ -5,6 +5,7 @@
     top: 20px;
     right: 15px;
     cursor: pointer;
+    fill: #C7C7C7;
 }
 
 .close-item {
@@ -69,4 +70,12 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.normal--size {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 0.5em;
 }
