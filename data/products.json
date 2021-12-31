@@ -4,6 +4,7 @@
             "id": "n3200",
             "name": "Imac Apple",
             "price": 1299,
+            "type": "electronics",
             "imgs": [
                 {
                     "img": "../assets/img/imac.jpeg",
@@ -16,6 +17,7 @@
             "id": "n3201",
             "name": "earphones",
             "price": 125,
+            "type": "electronics",
             "imgs": [
                 {
                     "img": "../assets/img/earphones.jpeg",
@@ -28,6 +30,7 @@
             "id": "n3202",
             "name": "tablet",
             "price": 375,
+            "type": "electronics",
             "imgs": [
                 {
                     "img": "../assets/img/tablet.jpeg",
@@ -40,6 +43,7 @@
             "id": "n3203",
             "name": "Sport Shoes",
             "price": 304,
+            "type": "furniture",
             "imgs": [
                 {
                     "img": "../assets/img/shoes.jpeg",
@@ -52,6 +56,7 @@
             "id": "n3204",
             "name": "Macbook Pro",
             "price": 1449,
+            "type": "electronics",
             "imgs": [
                 {
                     "img": "../assets/img/macbook.jpeg",
@@ -64,6 +69,7 @@
             "id": "n3205",
             "name": "Digital Camera",
             "price": 245,
+            "type": "electronics",
             "imgs": [
                 {
                     "img": "../assets/img/camera1.jpeg",
@@ -76,6 +82,7 @@
             "id": "n3206",
             "name": "Retro refrigerator",
             "price": 153,
+            "type": "electronics",
             "imgs": [
                 {
                     "img": "../assets/img/bitmap.jpeg",
@@ -88,6 +95,7 @@
             "id": "n3207",
             "name": "Iphone 13 Pro",
             "price": 1099,
+            "type": "electronics",
             "imgs": [
                 {
                     "img": "../assets/img/iphone.jpeg",
@@ -100,6 +108,7 @@
             "id": "n3208",
             "name": "Round shelf",
             "price": 133,
+            "type": "electronics",
             "imgs": [
                 {
                     "img": "../assets/img/round_shelf.jpeg",
@@ -120,9 +129,426 @@
             "id": "n3209",
             "name": "Classic Watch",
             "price": 238,
+            "type": "others",
             "imgs": [
                 {
                     "img": "../assets/img/watch.jpeg",
+                    "size": "normal"
+                }
+            ],
+            "description": "Refined design for sophistication on your wrist, with high-end stainless steel materials, powerful and intuitive to use."
+        },
+        {
+            "id": "n3210",
+            "name": "Classic Watch",
+            "price": 238,
+            "type": "clothes",
+            "imgs": [
+                {
+                    "img": "../assets/img/clothes1.jpeg",
+                    "size": "normal"
+                }
+            ],
+            "description": "Refined design for sophistication on your wrist, with high-end stainless steel materials, powerful and intuitive to use."
+        },
+        {
+            "id": "n3211",
+            "name": "Classic Watch",
+            "price": 238,
+            "type": "clothes",
+            "imgs": [
+                {
+                    "img": "../assets/img/clothes3.jpeg",
+                    "size": "normal"
+                }
+            ],
+            "description": "Refined design for sophistication on your wrist, with high-end stainless steel materials, powerful and intuitive to use."
+        },
+        {
+            "id": "n3212",
+            "name": "Classic Watch",
+            "price": 238,
+            "type": "clothes",
+            "imgs": [
+                {
+                    "img": "../assets/img/clothes4.jpeg",
+                    "size": "normal"
+                }
+            ],
+            "description": "Refined design for sophistication on your wrist, with high-end stainless steel materials, powerful and intuitive to use."
+        },
+        {
+            "id": "n3213",
+            "name": "Classic Watch",
+            "price": 238,
+            "type": "clothes",
+            "imgs": [
+                {
+                    "img": "../assets/img/clothes5.jpeg",
+                    "size": "normal"
+                }
+            ],
+            "description": "Refined design for sophistication on your wrist, with high-end stainless steel materials, powerful and intuitive to use."
+        },
+        {
+            "id": "n3214",
+            "name": "Classic Watch",
+            "price": 238,
+            "type": "clothes",
+            "imgs": [
+                {
+                    "img": "../assets/img/clothes7.jpeg",
+                    "size": "normal"
+                }
+            ],
+            "description": "Refined design for sophistication on your wrist, with high-end stainless steel materials, powerful and intuitive to use."
+        },
+        {
+            "id": "n3215",
+            "name": "Classic Watch",
+            "price": 238,
+            "type": "clothes",
+            "imgs": [
+                {
+                    "img": "../assets/img/clothes9.jpeg",
+                    "size": "normal"
+                }
+            ],
+            "description": "Refined design for sophistication on your wrist, with high-end stainless steel materials, powerful and intuitive to use."
+        },
+        {
+            "id": "n3216",
+            "name": "Classic Watch",
+            "price": 238,
+            "type": "clothes",
+            "imgs": [
+                {
+                    "img": "../assets/img/clothes10.jpeg",
+                    "size": "normal"
+                }
+            ],
+            "description": "Refined design for sophistication on your wrist, with high-end stainless steel materials, powerful and intuitive to use."
+        },
+        {
+            "id": "n3217",
+            "name": "Classic Watch",
+            "price": 238,
+            "type": "clothes",
+            "imgs": [
+                {
+                    "img": "../assets/img/clothes11.jpeg",
+                    "size": "normal"
+                }
+            ],
+            "description": "Refined design for sophistication on your wrist, with high-end stainless steel materials, powerful and intuitive to use."
+        },
+        {
+            "id": "n3218",
+            "name": "Classic Watch",
+            "price": 238,
+            "type": "clothes",
+            "imgs": [
+                {
+                    "img": "../assets/img/clothes12.jpeg",
+                    "size": "normal"
+                }
+            ],
+            "description": "Refined design for sophistication on your wrist, with high-end stainless steel materials, powerful and intuitive to use."
+        },
+        {
+            "id": "n3219",
+            "name": "Classic Watch",
+            "price": 238,
+            "type": "clothes",
+            "imgs": [
+                {
+                    "img": "../assets/img/clothes14.jpeg",
+                    "size": "normal"
+                }
+            ],
+            "description": "Refined design for sophistication on your wrist, with high-end stainless steel materials, powerful and intuitive to use."
+        },
+        {
+            "id": "n3220",
+            "name": "Classic Watch",
+            "price": 238,
+            "type": "furniture",
+            "imgs": [
+                {
+                    "img": "../assets/img/furniture1.jpeg",
+                    "size": "normal"
+                }
+            ],
+            "description": "Refined design for sophistication on your wrist, with high-end stainless steel materials, powerful and intuitive to use."
+        },
+        {
+            "id": "n3221",
+            "name": "Classic Watch",
+            "price": 238,
+            "type": "furniture",
+            "imgs": [
+                {
+                    "img": "../assets/img/furniture2.jpeg",
+                    "size": "normal"
+                }
+            ],
+            "description": "Refined design for sophistication on your wrist, with high-end stainless steel materials, powerful and intuitive to use."
+        },
+        {
+            "id": "n3222",
+            "name": "Classic Watch",
+            "price": 238,
+            "type": "furniture",
+            "imgs": [
+                {
+                    "img": "../assets/img/furniture3.jpeg",
+                    "size": "normal"
+                }
+            ],
+            "description": "Refined design for sophistication on your wrist, with high-end stainless steel materials, powerful and intuitive to use."
+        },
+        {
+            "id": "n3223",
+            "name": "Classic Watch",
+            "price": 238,
+            "type": "furniture",
+            "imgs": [
+                {
+                    "img": "../assets/img/furniture4.jpeg",
+                    "size": "normal"
+                }
+            ],
+            "description": "Refined design for sophistication on your wrist, with high-end stainless steel materials, powerful and intuitive to use."
+        },
+        {
+            "id": "n3224",
+            "name": "Classic Watch",
+            "price": 238,
+            "type": "furniture",
+            "imgs": [
+                {
+                    "img": "../assets/img/furniture5.jpeg",
+                    "size": "normal"
+                }
+            ],
+            "description": "Refined design for sophistication on your wrist, with high-end stainless steel materials, powerful and intuitive to use."
+        },
+        {
+            "id": "n3225",
+            "name": "Classic Watch",
+            "price": 238,
+            "type": "furniture",
+            "imgs": [
+                {
+                    "img": "../assets/img/furniture6.jpeg",
+                    "size": "normal"
+                }
+            ],
+            "description": "Refined design for sophistication on your wrist, with high-end stainless steel materials, powerful and intuitive to use."
+        },
+        {
+            "id": "n3226",
+            "name": "Classic Watch",
+            "price": 238,
+            "type": "toys",
+            "imgs": [
+                {
+                    "img": "../assets/img/toys1.jpeg",
+                    "size": "normal"
+                }
+            ],
+            "description": "Refined design for sophistication on your wrist, with high-end stainless steel materials, powerful and intuitive to use."
+        },
+        {
+            "id": "n3227",
+            "name": "Classic Watch",
+            "price": 238,
+            "type": "toys",
+            "imgs": [
+                {
+                    "img": "../assets/img/toys2.jpeg",
+                    "size": "normal"
+                }
+            ],
+            "description": "Refined design for sophistication on your wrist, with high-end stainless steel materials, powerful and intuitive to use."
+        },
+        {
+            "id": "n3228",
+            "name": "Classic Watch",
+            "price": 238,
+            "type": "toys",
+            "imgs": [
+                {
+                    "img": "../assets/img/toys3.jpeg",
+                    "size": "normal"
+                }
+            ],
+            "description": "Refined design for sophistication on your wrist, with high-end stainless steel materials, powerful and intuitive to use."
+        },
+        {
+            "id": "n3229",
+            "name": "Classic Watch",
+            "price": 238,
+            "type": "toys",
+            "imgs": [
+                {
+                    "img": "../assets/img/toys4.jpeg",
+                    "size": "normal"
+                }
+            ],
+            "description": "Refined design for sophistication on your wrist, with high-end stainless steel materials, powerful and intuitive to use."
+        },
+        {
+            "id": "n3230",
+            "name": "Classic Watch",
+            "price": 238,
+            "type": "toys",
+            "imgs": [
+                {
+                    "img": "../assets/img/toys5.jpeg",
+                    "size": "normal"
+                }
+            ],
+            "description": "Refined design for sophistication on your wrist, with high-end stainless steel materials, powerful and intuitive to use."
+        },
+        {
+            "id": "n3231",
+            "name": "Classic Watch",
+            "price": 238,
+            "type": "toys",
+            "imgs": [
+                {
+                    "img": "../assets/img/toys6.jpeg",
+                    "size": "normal"
+                }
+            ],
+            "description": "Refined design for sophistication on your wrist, with high-end stainless steel materials, powerful and intuitive to use."
+        },
+        {
+            "id": "n3232",
+            "name": "Classic Watch",
+            "price": 238,
+            "type": "toys",
+            "imgs": [
+                {
+                    "img": "../assets/img/toys7.jpeg",
+                    "size": "normal"
+                }
+            ],
+            "description": "Refined design for sophistication on your wrist, with high-end stainless steel materials, powerful and intuitive to use."
+        },
+        {
+            "id": "n3233",
+            "name": "Classic Watch",
+            "price": 238,
+            "type": "toys",
+            "imgs": [
+                {
+                    "img": "../assets/img/toys8.jpeg",
+                    "size": "normal"
+                }
+            ],
+            "description": "Refined design for sophistication on your wrist, with high-end stainless steel materials, powerful and intuitive to use."
+        },
+        {
+            "id": "n3234",
+            "name": "Classic Watch",
+            "price": 238,
+            "type": "others",
+            "imgs": [
+                {
+                    "img": "../assets/img/others1.jpeg",
+                    "size": "normal"
+                }
+            ],
+            "description": "Refined design for sophistication on your wrist, with high-end stainless steel materials, powerful and intuitive to use."
+        },
+        {
+            "id": "n3235",
+            "name": "Classic Watch",
+            "price": 238,
+            "type": "others",
+            "imgs": [
+                {
+                    "img": "../assets/img/others2.jpeg",
+                    "size": "normal"
+                }
+            ],
+            "description": "Refined design for sophistication on your wrist, with high-end stainless steel materials, powerful and intuitive to use."
+        },
+        {
+            "id": "n3236",
+            "name": "Classic Watch",
+            "price": 238,
+            "type": "others",
+            "imgs": [
+                {
+                    "img": "../assets/img/others3.jpeg",
+                    "size": "normal"
+                }
+            ],
+            "description": "Refined design for sophistication on your wrist, with high-end stainless steel materials, powerful and intuitive to use."
+        },
+        {
+            "id": "n3237",
+            "name": "Classic Watch",
+            "price": 238,
+            "type": "others",
+            "imgs": [
+                {
+                    "img": "../assets/img/others4.jpeg",
+                    "size": "normal"
+                }
+            ],
+            "description": "Refined design for sophistication on your wrist, with high-end stainless steel materials, powerful and intuitive to use."
+        },
+        {
+            "id": "n3238",
+            "name": "Classic Watch",
+            "price": 238,
+            "type": "others",
+            "imgs": [
+                {
+                    "img": "../assets/img/others6.jpeg",
+                    "size": "normal"
+                }
+            ],
+            "description": "Refined design for sophistication on your wrist, with high-end stainless steel materials, powerful and intuitive to use."
+        },
+        {
+            "id": "n3239",
+            "name": "Classic Watch",
+            "price": 238,
+            "type": "others",
+            "imgs": [
+                {
+                    "img": "../assets/img/others7.jpeg",
+                    "size": "normal"
+                }
+            ],
+            "description": "Refined design for sophistication on your wrist, with high-end stainless steel materials, powerful and intuitive to use."
+        },
+        {
+            "id": "n3240",
+            "name": "Classic Watch",
+            "price": 238,
+            "type": "others",
+            "imgs": [
+                {
+                    "img": "../assets/img/others8.jpeg",
+                    "size": "normal"
+                }
+            ],
+            "description": "Refined design for sophistication on your wrist, with high-end stainless steel materials, powerful and intuitive to use."
+        },
+        {
+            "id": "n3241",
+            "name": "Classic Watch",
+            "price": 238,
+            "type": "others",
+            "imgs": [
+                {
+                    "img": "../assets/img/others5.jpeg",
                     "size": "normal"
                 }
             ],
