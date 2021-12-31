@@ -1,6 +1,7 @@
 var btnHomeMenu = null, userData = null, arrayProducts = [], btnShowShoppingCard = null, linkLogo, textLogo, 
 wrapperHomeShoppItems, totalTable, lastIds = "", inputsAccount, wrapperProducts, productDetailWrapper;
-var detailImgProduct, detailPriceProduct, detailTittleProduct, detailDescripProduct, previousId = "";
+var detailImgProduct, detailPriceProduct, detailTittleProduct, detailDescripProduct, detailBtn, detailBtnText, previousId = "";
+// another way of getting attributes:  element.getAttribute('attribute-name'); 
 
 fetch("../data/users.json")
 .then(data => data.json())
@@ -33,6 +34,8 @@ window.addEventListener("load", function() {
         totalTable = this.document.getElementById("js-shopping-total");
         wrapperProducts = document.getElementById("js-products-container");
         productDetailWrapper = document.getElementById("js-product-detail");
+        detailBtn = document.getElementById("js-detail-btn");
+        detailBtnText = document.getElementById("js-detail-btn-text");
 
         detailImgProduct = document.getElementById("js-detail-img");
         detailPriceProduct = document.getElementById("js-detail-price");
@@ -138,6 +141,8 @@ function loadProducts() {
     wrapperProducts.innerHTML = concatArticles;
 }
 
+
+// this function validate what products are selected and show them into the shopping cart tab.
 function showProductsSelected() {
     let concatArticles = "", count = 0;
 
@@ -227,8 +232,15 @@ function showProductDetails(idProduct) {
         detailPriceProduct.innerHTML = `$ ${productInfo[0].price},00`;
         detailTittleProduct.innerHTML = productInfo[0].name;
         detailDescripProduct.innerHTML = productInfo[0].description;
+        detailBtn.setAttribute("data-product", idProduct);
         previousId = productInfo[0].id;
         console.log("diferente!!");
+    }
+    let selected = userData.currentSelectedProducts.filter((item) => item.idProduct == idProduct);
+    if(selected[0] != undefined) { // I verify if the product has been added to the cart or not.
+        detailBtnText.innerHTML = "Remove from cart";
+    } else {
+        detailBtnText.innerHTML = "Add to cart";
     }
     productDetailWrapper.classList.add("show-product-detail");
     document.body.style.overflow = "hidden";
@@ -237,4 +249,13 @@ function showProductDetails(idProduct) {
 function hideProductDetail() {
     productDetailWrapper.classList.remove("show-product-detail");
     document.body.style.overflow = "scroll";
+}
+
+function addToShopp(myElement) {
+    addToCardBtn(myElement.dataset.product);
+    if(detailBtnText.innerHTML == "Remove from cart") {
+        detailBtnText.innerHTML = "Add to cart";
+    } else {
+        detailBtnText.innerHTML = "Remove from cart";
+    }
 }
