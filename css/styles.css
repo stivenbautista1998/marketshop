@@ -373,7 +373,7 @@ a.grey__message:hover, a.green__message:hover {
 .shopping-card-tab {
     position: fixed;
     width: 100vw;
-    height: 92.5vh;
+    height: 92.9vh; /* 1px left for border of nav */
     padding: 1.5em;
     display: flex;
     flex-direction: column;
@@ -507,6 +507,10 @@ a.grey__message:hover, a.green__message:hover {
     background-position-x: center;
     background-position-y: center;
     background-size: cover;
+}
+
+.menu-active + .header-home-section .header-home-nav {
+    border-bottom: 1px solid var(--background-color);
 }
 
 @media (min-width: 430px) {
