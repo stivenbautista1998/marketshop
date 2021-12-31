@@ -11,11 +11,9 @@ fetch("../data/products.json")
 .then(data => data.json())
 .then(result => {
     arrayProducts = result.product;
-    console.log(arrayProducts);
 }).catch(err => console.log(err));
 
 window.addEventListener("load", function() {
-    /* console.log(window.location.href); */
     if(window.location.href == "http://127.0.0.1:5500/index.html") {
         const btnLogin = this.document.getElementById("login-btn");
     
@@ -60,7 +58,8 @@ function showLogin() {
     window.location.href = "../index.html";
 }
 
-function addToCardBtn(myElement) {
+function addToCardBtn(idMyElement) {
+    const myElement = document.getElementById(idMyElement);
     const father = myElement.parentElement;
     const article = father.parentElement;
     
@@ -110,7 +109,6 @@ function showShoppingCard() {
 }
 
 function loadProducts() {
-    console.log("testing");
     let infoProduct = null, concatArticles = "";
 
     for(let productItem in arrayProducts) {
@@ -126,7 +124,7 @@ function loadProducts() {
                                         <span class="green__message name-product">${infoProduct.name}</span>
                                     </div>
                                     <div class="circle-border"></div>
-                                    <img class="add_to_card" onclick="addToCardBtn(this)" src="../assets/icons/add_to_cart.svg" alt="image of a shopping car">
+                                    <img id="${infoProduct.id}" class="add_to_card" onclick="addToCardBtn('${infoProduct.id}')" src="../assets/icons/add_to_cart.svg" alt="image of a shopping car">
                                 </div>
                             </article>`;
     }
@@ -169,7 +167,6 @@ function showProductsSelected() {
             }
         }
         if(concatArticles != "") { // if there is a change show it in the screen
-            console.log(lastIds);
             wrapperHomeShoppItems.innerHTML = concatArticles;
             totalTable.innerHTML = "$ " + count + ",00";
         }
@@ -179,8 +176,9 @@ function showProductsSelected() {
 function deleteItem(myItem) {
     let itemID = myItem.dataset.product;
     let newFilter = userData.currentSelectedProducts.filter(item => item.idProduct != itemID);
-    /* userData.currentSelectedProducts = newFilter;
-    showProductsSelected(); */
+    userData.currentSelectedProducts = newFilter;
+    showProductsSelected();
+    addToCardBtn(itemID);
 }
 
 
