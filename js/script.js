@@ -123,7 +123,6 @@ function loadProducts() {
 
     for(let productItem in arrayProducts) {
         infoProduct = arrayProducts[productItem];
-        console.log(infoProduct);
 
         concatArticles += `<article data-product="${infoProduct.id}" class="article-section-item">
                                 <div onclick="showProductDetails('${infoProduct.id}')" class="article-section-item__img new-img" style="background-image: url('${infoProduct.imgs[0].img}');">
@@ -163,7 +162,6 @@ function showProductsSelected() {
                 if(arrayProducts[obj].id == currentID) {
                     infoProduct = arrayProducts[obj];
                     count += infoProduct.price;
-                    console.log(infoProduct);
                     concatArticles += "<article class='shopping-card-item'>" +
                                             "<div class='front-container'>" +
                                                 "<div class='image-border' style='background-image: url(" + infoProduct.imgs[0].img + ");'></div>" +
@@ -225,7 +223,6 @@ function showDetails() {
 
 
 function showProductDetails(idProduct) {
-    console.log(idProduct);
     if(idProduct != previousId) {
         const productInfo = arrayProducts.filter(item => item.id == idProduct);
         detailImgProduct.style.backgroundImage = `url('${productInfo[0].imgs[0].img}')`;
@@ -234,7 +231,6 @@ function showProductDetails(idProduct) {
         detailDescripProduct.innerHTML = productInfo[0].description;
         detailBtn.setAttribute("data-product", idProduct);
         previousId = productInfo[0].id;
-        console.log("diferente!!");
     }
     let selected = userData.currentSelectedProducts.filter((item) => item.idProduct == idProduct);
     if(selected[0] != undefined) { // I verify if the product has been added to the cart or not.
@@ -267,5 +263,3 @@ function becomeDollar(value) {
     });
     return formatter.format(value);  
 }
-
-console.log(becomeDollar(125));
