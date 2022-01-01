@@ -15,6 +15,8 @@ fetch("../data/products.json")
     arrayProducts = result.product;
 }).catch(err => console.log(err));
 
+
+// execute the application code depending of the current web page when the whole app loaded.
 window.addEventListener("load", function() {
     if(window.location.href == "http://127.0.0.1:5500/index.html") {
         const btnLogin = this.document.getElementById("login-btn");
@@ -68,28 +70,36 @@ function showLogin() {
     window.location.href = "../index.html";
 }
 
+
+// update the state of the product and change the "add to cart" image of the home section according to it.
 function addToCardBtn(idMyElement) {
-    const myElement = document.getElementById(idMyElement);
-    const father = myElement.parentElement;
-    const article = father.parentElement;
-    
-    if(father.classList[1] == "clickedBtn") {
-        father.classList.remove("clickedBtn");
-        myElement.setAttribute('src', "../assets/icons/add_to_cart.svg");
-        let filteredProducts = userData.currentSelectedProducts.filter((item) => item.idProduct != article.dataset.product);
+    if(document.getElementById(idMyElement) === null) {
+        let filteredProducts = userData.currentSelectedProducts.filter((item) => item.idProduct != idMyElement);
         userData.currentSelectedProducts = filteredProducts;
     } else {
-        father.classList.add("clickedBtn");
-        myElement.setAttribute('src', "../assets/icons/selected-to-buy.svg");
-        userData.currentSelectedProducts.push({ idProduct: article.dataset.product });
+        const myElement = document.getElementById(idMyElement);
+        const father = myElement.parentElement;
+        
+        if(father.classList[1] == "clickedBtn") {
+            father.classList.remove("clickedBtn");
+            myElement.setAttribute('src', "../assets/icons/add_to_cart.svg");
+            let filteredProducts = userData.currentSelectedProducts.filter((item) => item.idProduct != idMyElement);
+            userData.currentSelectedProducts = filteredProducts;
+        } else {
+            father.classList.add("clickedBtn");
+            myElement.setAttribute('src', "../assets/icons/selected-to-buy.svg");
+            userData.currentSelectedProducts.push({ idProduct: idMyElement });
+        }
     }
 }
 
+// function that show the menu of the home section
 function showMenu() {
     btnHomeMenu.classList.add("menu-active");
     document.body.style.overflow = "hidden";
 }
 
+// function that hide the menu of the home section
 function hideMenu() {
     btnHomeMenu.classList.remove("menu-active");
     document.body.style.overflow = "scroll";
@@ -100,6 +110,7 @@ function handleHomeList(myElement) {
         const oldSelectedItem = document.getElementsByClassName("selected");
         oldSelectedItem[0].classList.remove("selected");
         myElement.classList.add("selected");
+        loadProducts(myElement.innerHTML);
     }
 }
 
@@ -118,11 +129,13 @@ function showShoppingCard() {
     }
 }
 
-function loadProducts() {
+function loadProducts(filter = "All") {
     let infoProduct = null, concatArticles = "";
+    let newFilterOfProducts = filterHomeProducts(filter);
+    console.log(newFilterOfProducts);
 
-    for(let productItem in arrayProducts) {
-        infoProduct = arrayProducts[productItem];
+    for(let productItem in newFilterOfProducts) {
+        infoProduct = newFilterOfProducts[productItem];
 
         concatArticles += `<article data-product="${infoProduct.id}" class="article-section-item">
                                 <div onclick="showProductDetails('${infoProduct.id}')" class="article-section-item__img new-img" style="background-image: url('${infoProduct.imgs[0].img}');">
@@ -253,6 +266,15 @@ function addToShopp(myElement) {
         detailBtnText.innerHTML = "Add to cart";
     } else {
         detailBtnText.innerHTML = "Remove from cart";
+    }
+}
+
+
+function filterHomeProducts(filterType) {
+    if(filterType != "All") {
+        return arrayProducts.filter(item => item.type == filterType.toLowerCase());
+    } else {
+        return arrayProducts;
     }
 }
 
