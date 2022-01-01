@@ -130,7 +130,7 @@ function loadProducts() {
                                 </div>
                                 <div class="article-section-item__content">
                                     <div class="card-text">
-                                        <span class="grey__message price-product">$${infoProduct.price},00</span>
+                                        <span class="grey__message price-product">${becomeDollar(infoProduct.price)}</span>
                                         <span class="green__message name-product">${infoProduct.name}</span>
                                     </div>
                                     <div class="circle-border"></div>
@@ -170,7 +170,7 @@ function showProductsSelected() {
                                                 "<span class='name-product'>" + infoProduct.name + "</span>" +
                                             "</div>" +
                                             "<div class='back-container'>" +
-                                                "<span class='price-product'>$ " + infoProduct.price + ",00</span>" +
+                                                "<span class='price-product'>" + becomeDollar(infoProduct.price) + "</span>" +
                                                 "<img onclick='deleteItem(this)' data-product='" + infoProduct.id + "' class='close-icon close-item' src='../assets/icons/x-icon.svg' alt='close item'>" +
                                             "</div>" +
                                         "</article>";
@@ -180,7 +180,7 @@ function showProductsSelected() {
         }
         if(concatArticles != "") { // if there is a change show it in the screen
             wrapperHomeShoppItems.innerHTML = concatArticles;
-            totalTable.innerHTML = "$ " + count + ",00";
+            totalTable.innerHTML = becomeDollar(count);
         }
     }
 }
@@ -229,7 +229,7 @@ function showProductDetails(idProduct) {
     if(idProduct != previousId) {
         const productInfo = arrayProducts.filter(item => item.id == idProduct);
         detailImgProduct.style.backgroundImage = `url('${productInfo[0].imgs[0].img}')`;
-        detailPriceProduct.innerHTML = `$ ${productInfo[0].price},00`;
+        detailPriceProduct.innerHTML = becomeDollar(productInfo[0].price);
         detailTittleProduct.innerHTML = productInfo[0].name;
         detailDescripProduct.innerHTML = productInfo[0].description;
         detailBtn.setAttribute("data-product", idProduct);
@@ -259,3 +259,13 @@ function addToShopp(myElement) {
         detailBtnText.innerHTML = "Remove from cart";
     }
 }
+
+function becomeDollar(value) {
+    var formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+    });
+    return formatter.format(value);  
+}
+
+console.log(becomeDollar(125));
