@@ -135,21 +135,24 @@ function showShoppingCard() {
 function loadProducts(filter = "All") {
     let infoProduct = null, concatArticles = "";
     let newFilterOfProducts = filterHomeProducts(filter);
-    console.log(newFilterOfProducts);
 
     for(let productItem in newFilterOfProducts) {
         infoProduct = newFilterOfProducts[productItem];
 
+        // this code is used to check if the product has been selected or not by the user and affect the style according of it.
+        let isSelected = userData.currentSelectedProducts.filter(item => item.idProduct == infoProduct.id);
+        let imgUrl = (isSelected[0] ? "../assets/icons/selected-to-buy.svg" : "../assets/icons/add_to_cart.svg");
+
         concatArticles += `<article data-product="${infoProduct.id}" class="article-section-item">
                                 <div onclick="showProductDetails('${infoProduct.id}')" class="article-section-item__img new-img" style="background-image: url('${infoProduct.imgs[0].img}');">
                                 </div>
-                                <div class="article-section-item__content">
+                                <div class="article-section-item__content ${isSelected[0] ? 'clickedBtn' : ''}">
                                     <div class="card-text">
                                         <span class="grey__message price-product">${becomeDollar(infoProduct.price)}</span>
                                         <span class="green__message name-product">${infoProduct.name}</span>
                                     </div>
                                     <div class="circle-border"></div>
-                                    <img id="${infoProduct.id}" class="add_to_card" onclick="addToCardBtn('${infoProduct.id}')" src="../assets/icons/add_to_cart.svg" alt="image of a shopping car">
+                                    <img id="${infoProduct.id}" class="add_to_card" onclick="addToCardBtn('${infoProduct.id}')" src="${imgUrl}" alt="image of a shopping car">
                                 </div>
                             </article>`;
     }

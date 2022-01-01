@@ -43,7 +43,7 @@
             "id": "n3203",
             "name": "Sport Shoes",
             "price": 304,
-            "type": "furniture",
+            "type": "clothes",
             "imgs": [
                 {
                     "img": "../assets/img/shoes.jpeg",
