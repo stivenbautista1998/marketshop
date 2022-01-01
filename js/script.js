@@ -105,6 +105,7 @@ function hideMenu() {
     document.body.style.overflow = "scroll";
 }
 
+// change the look of the nav list on the home section when a different item of the list is clicked.
 function handleHomeList(myElement) {
     if(!myElement.classList[1]) { // execute the code when the item clicked is not selected.
         const oldSelectedItem = document.getElementsByClassName("selected");
@@ -114,6 +115,7 @@ function handleHomeList(myElement) {
     }
 }
 
+// the function shows or hides the shopping cart tab when the shopping cart button of the home section is clicked.
 function showShoppingCard() {
     if(btnShowShoppingCard.classList[1] == "menu-active") {
         btnShowShoppingCard.classList.remove("menu-active");
@@ -129,6 +131,7 @@ function showShoppingCard() {
     }
 }
 
+// the function loads all the products of the home section depending of the filter parameter.
 function loadProducts(filter = "All") {
     let infoProduct = null, concatArticles = "";
     let newFilterOfProducts = filterHomeProducts(filter);
@@ -196,6 +199,7 @@ function showProductsSelected() {
     }
 }
 
+// the function update the state of the product to "not selected" and remove it from the shopping cart tab view.
 function deleteItem(myItem) {
     let itemID = myItem.dataset.product;
     let newFilter = userData.currentSelectedProducts.filter(item => item.idProduct != itemID);
@@ -204,7 +208,7 @@ function deleteItem(myItem) {
     addToCardBtn(itemID);
 }
 
-
+// function that returns an string with all the ids of the products that are currently selected by the user.
 function getCurrentIds() {
     let stringIds = "";
     for(let current in userData.currentSelectedProducts) {
@@ -213,6 +217,7 @@ function getCurrentIds() {
     return stringIds;
 }
 
+// function that update the look of the my account view and allows to edit its fields.
 function editAccount(myElement) {
     if(myElement.innerHTML != "Save") {
         myElement.innerHTML = "Save";
@@ -230,11 +235,12 @@ function editAccount(myElement) {
     }
 }
 
+// function that change the url of the webpage to my-order view.
 function showDetails() {
     window.location.href = "http://127.0.0.1:5500/views/my-order.html";
 }
 
-
+// function that shows and update the values of the product detail view.
 function showProductDetails(idProduct) {
     if(idProduct != previousId) {
         const productInfo = arrayProducts.filter(item => item.id == idProduct);
@@ -255,11 +261,13 @@ function showProductDetails(idProduct) {
     document.body.style.overflow = "hidden";
 }
 
+// function that hides the product detail view.
 function hideProductDetail() {
     productDetailWrapper.classList.remove("show-product-detail");
     document.body.style.overflow = "scroll";
 }
 
+// function that updates the text of the button on the product detail view according to the state of the product.
 function addToShopp(myElement) {
     addToCardBtn(myElement.dataset.product);
     if(detailBtnText.innerHTML == "Remove from cart") {
@@ -269,7 +277,7 @@ function addToShopp(myElement) {
     }
 }
 
-
+// function that filters the list of products depending on the filter type passed passed as parameter.  
 function filterHomeProducts(filterType) {
     if(filterType != "All") {
         return arrayProducts.filter(item => item.type == filterType.toLowerCase());
@@ -278,6 +286,7 @@ function filterHomeProducts(filterType) {
     }
 }
 
+// function that converts a number passed as a parameter to a string in currency format and returns it.
 function becomeDollar(value) {
     var formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
