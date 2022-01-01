@@ -18,12 +18,12 @@
         <div>
             <h2 class="menu-tab__tittle">CATEGORIES</h2>
             <ul class="menu-tab__main-list">
-                <li class="menu-tab__main-list__item">All</li>
-                <li class="menu-tab__main-list__item">Clothes</li>
-                <li class="menu-tab__main-list__item">Electronics</li>
-                <li class="menu-tab__main-list__item">Furnitures</li>
-                <li class="menu-tab__main-list__item">Toys</li>
-                <li class="menu-tab__main-list__item">Others</li>
+                <li onclick="changeFilterSinceNav('all')" class="menu-tab__main-list__item">All</li>
+                <li onclick="changeFilterSinceNav('clothes')" class="menu-tab__main-list__item">Clothes</li>
+                <li onclick="changeFilterSinceNav('electronics')" class="menu-tab__main-list__item">Electronics</li>
+                <li onclick="changeFilterSinceNav('furnitures')" class="menu-tab__main-list__item">Furnitures</li>
+                <li onclick="changeFilterSinceNav('toys')" class="menu-tab__main-list__item">Toys</li>
+                <li onclick="changeFilterSinceNav('others')" class="menu-tab__main-list__item">Others</li>
             </ul>
             <ul class="menu-tab__logged">
                 <li class="menu-tab__logged__item"><a class="style-no-link" href="./my-orders.html">My orders</a></li>
@@ -84,12 +84,12 @@
             <input id="search-input" class="header-home-section__search" type="text" placeholder="Search product">
         </div>
         <ul id="home-nav" class="header-home-section__list">
-            <li onclick="handleHomeList(this)" class="header-home-section__list-option selected">All</li>
-            <li onclick="handleHomeList(this)" class="header-home-section__list-option">Clothes</li>
-            <li onclick="handleHomeList(this)" class="header-home-section__list-option">Electronics</li>
-            <li onclick="handleHomeList(this)" class="header-home-section__list-option">Furniture</li>
-            <li onclick="handleHomeList(this)" class="header-home-section__list-option">Toys</li>
-            <li onclick="handleHomeList(this)" class="header-home-section__list-option">Others</li>
+            <li id="js-all" onclick="handleHomeList(this)" class="header-home-section__list-option selected">All</li>
+            <li id="js-clothes" onclick="handleHomeList(this)" class="header-home-section__list-option">Clothes</li>
+            <li id="js-electronics" onclick="handleHomeList(this)" class="header-home-section__list-option">Electronics</li>
+            <li id="js-furnitures" onclick="handleHomeList(this)" class="header-home-section__list-option">Furniture</li>
+            <li id="js-toys" onclick="handleHomeList(this)" class="header-home-section__list-option">Toys</li>
+            <li id="js-others" onclick="handleHomeList(this)" class="header-home-section__list-option">Others</li>
         </ul>
         <span class="header-home-section__text">Order:</span> 
         <select class="header-home-section__order" name="" id="">

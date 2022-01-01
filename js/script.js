@@ -1,5 +1,5 @@
 var btnHomeMenu = null, userData = null, arrayProducts = [], btnShowShoppingCard = null, linkLogo, textLogo, 
-wrapperHomeShoppItems, totalTable, lastIds = "", inputsAccount, wrapperProducts, productDetailWrapper;
+wrapperHomeShoppItems, totalTable, lastIds = "", inputsAccount, wrapperProducts, productDetailWrapper, currentProductFilter = "all";
 var detailImgProduct, detailPriceProduct, detailTittleProduct, detailDescripProduct, detailBtn, detailBtnText, previousId = "";
 // another way of getting attributes:  element.getAttribute('attribute-name'); 
 
@@ -62,10 +62,12 @@ window.addEventListener("load", function() {
     }
 });
 
+// function that change the url of the webpage to the create account view.
 function showMyAccount() {
     window.location.href = "../views/create-account.html";
 }
 
+// function that change the url of the webpage to the login view.
 function showLogin() {
     window.location.href = "../index.html";
 }
@@ -111,7 +113,8 @@ function handleHomeList(myElement) {
         const oldSelectedItem = document.getElementsByClassName("selected");
         oldSelectedItem[0].classList.remove("selected");
         myElement.classList.add("selected");
-        loadProducts(myElement.innerHTML);
+        currentProductFilter = myElement.innerHTML.toLowerCase();
+        loadProducts(myElement.innerHTML.toLowerCase());
     }
 }
 
@@ -132,7 +135,7 @@ function showShoppingCard() {
 }
 
 // the function loads all the products of the home section depending of the filter parameter.
-function loadProducts(filter = "All") {
+function loadProducts(filter = "all") {
     let infoProduct = null, concatArticles = "";
     let newFilterOfProducts = filterHomeProducts(filter);
 
@@ -282,11 +285,18 @@ function addToShopp(myElement) {
 
 // function that filters the list of products depending on the filter type passed passed as parameter.  
 function filterHomeProducts(filterType) {
-    if(filterType != "All") {
-        return arrayProducts.filter(item => item.type == filterType.toLowerCase());
+    if(filterType != "all") {
+        return arrayProducts.filter(item => item.type == filterType);
     } else {
         return arrayProducts;
     }
+}
+
+// function that execute the filter on the home section and close the nav tab.
+function changeFilterSinceNav(filter) {
+    const newElement = document.getElementById("js-" + filter);
+    handleHomeList(newElement);
+    hideMenu();
 }
 
 // function that converts a number passed as a parameter to a string in currency format and returns it.
