@@ -389,6 +389,16 @@ a.grey__message:hover, a.green__message:hover {
     transition: transform .2s;
 }
 
+.shopping-card-top {
+    min-height: 300px;
+    max-height: 500px;
+    overflow-y: scroll;
+}
+
+.shopping-card-top::-webkit-scrollbar {
+    width: 0;
+}
+
 .menu-tab + .product-detail-tab {
     /* height: 92vh; */
     padding: 0;
