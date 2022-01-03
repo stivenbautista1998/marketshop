@@ -50,11 +50,7 @@
 }
 
 .search-icon {
-    width: 15px;
-    height: 15px;
-    position: absolute;
     left: 12px;
-    top: 12px;
 }
 
 .add_to_card {
@@ -78,4 +74,24 @@
     height: 24px;
     vertical-align: middle;
     margin-right: 0.5em;
+}
+
+.search-home-icon {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 12px;
+}
+
+.clean-search {
+    right: 12px;
+    visibility: hidden;
+}
+
+.not-found-icon {
+    width: 120px;
+    height: 120px;
+    display: inline-block;
+    margin: 0 auto;
+    margin-top: 5em;
 }

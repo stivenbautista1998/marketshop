@@ -1,7 +1,7 @@
 var btnHomeMenu = null, userData = null, arrayProducts = [], btnShowShoppingCard = null, linkLogo, textLogo, 
 wrapperHomeShoppItems, totalTable, lastIds = "", inputsAccount, wrapperProducts, productDetailWrapper, currentProductFilter = "all";
 var detailImgProduct, detailPriceProduct, detailTittleProduct, detailDescripProduct, detailBtn, detailBtnText, 
-previousId = "", itemAll, homeSearchInput;
+previousId = "", itemAll, homeSearchInput, searchCleanIcon, getTotalLoadedProducts = 0;
 // another way of getting attributes:  element.getAttribute('attribute-name'); 
 // document.getElementById("myBtn").click();  -- code to click a determined button.
 
@@ -42,6 +42,7 @@ window.addEventListener("load", function() {
         detailBtnText = document.getElementById("js-detail-btn-text");
         itemAll = document.getElementById("js-all");
         homeSearchInput = document.getElementById("search-input");
+        searchCleanIcon = document.getElementById("js-clean-search");
 
         detailImgProduct = document.getElementById("js-detail-img");
         detailPriceProduct = document.getElementById("js-detail-price");
@@ -119,7 +120,11 @@ function handleHomeList(myElement) {
         myElement.classList.add("selected");
         currentProductFilter = myElement.innerHTML.toLowerCase();
         homeSearchInput.value = "";
+        searchCleanIcon.classList.remove("close-vissible");
         loadProducts(myElement.innerHTML.toLowerCase());
+    } else if(myElement.innerHTML == "All" && arrayProducts.length != getTotalLoadedProducts) {
+        console.log("All item is been reoladed!!");
+        loadProducts(); // is executed when the All filter is selected but not all the products are being shown.
     }
 }
 
@@ -143,6 +148,7 @@ function showShoppingCard() {
 function loadProducts(filter = "all", searchInput = "") {
     let infoProduct = null, concatArticles = "";
     let newFilterOfProducts = filterHomeProducts(filter, searchInput);
+    getTotalLoadedProducts = newFilterOfProducts.length;
 
     for(let productItem in newFilterOfProducts) {
         infoProduct = newFilterOfProducts[productItem];
@@ -165,6 +171,9 @@ function loadProducts(filter = "all", searchInput = "") {
                             </article>`;
     }
     wrapperProducts.innerHTML = concatArticles;
+    if(concatArticles == "") {
+        wrapperProducts.innerHTML = `<img src="../assets/icons/noresults.png" class="not-found-icon" alt="icon that indicates that there are no results">`;
+    }
 }
 
 
@@ -308,24 +317,38 @@ function changeFilterSinceNav(filter) {
     hideMenu();
 }
 
+// function that makes a filter besed on the value of the search input of the home section.
 function getFilteredBySearchProducts(inputFilter) {
-    console.log(inputFilter);
     return arrayProducts.filter(item => item.name.includes(inputFilter));
 }
 
 // function that make search of products depending on what the user wrote in the input search field.
 function searchHandler(event) {
     /* console.log(event); */
+    if(event.target.value == "") {
+        if(searchCleanIcon.classList[2]) {
+            searchCleanIcon.classList.remove("close-vissible");
+        }
+    } else if(!searchCleanIcon.classList[2]) {
+        searchCleanIcon.classList.add("close-vissible");
+    }
+
     if(event.keyCode == 13) { // keyCode:13 means the enter key.
         event.preventDefault(); // Cancel the default action, if needed        
-        let searchFilter = event.target.value;
         if(!itemAll.classList[1]) { // add class selected if the all item is not selected.
             const oldSelectedItem = document.querySelector(".selected");
             oldSelectedItem.classList.remove("selected");
             itemAll.classList.add("selected");
         }
-        loadProducts("all", searchFilter);
+        loadProducts("all", event.target.value);
     }
+}
+
+// function that cleans the search input field in the home section.
+function cleanSearchInput() {
+    homeSearchInput.value = "";
+    searchCleanIcon.classList.remove("close-vissible");
+    homeSearchInput.focus();
 }
 
 // function that converts a number passed as a parameter to a string in currency format and returns it.

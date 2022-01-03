@@ -229,6 +229,10 @@ a.grey__message:hover, a.green__message:hover {
     font-weight: bold;
 }
 
+.search-home-section .close-vissible {
+    visibility: visible;
+}
+
 .header-home-section__text {
     color: var(--black);
     font-size: 1.2rem;
