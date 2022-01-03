@@ -414,6 +414,7 @@ a.grey__message:hover, a.green__message:hover {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1.5em;
+    transition: transform .3s;
 }
 
 .front-container, .back-container {
@@ -595,6 +596,10 @@ a.grey__message:hover, a.green__message:hover {
     position: absolute;
     top: 16px;
     right: 11px;
+}
+
+.deleted-item {
+    transform: translateX(-100vw);
 }
 
 @media (min-width: 430px) {

@@ -221,11 +221,17 @@ function showProductsSelected() {
 
 // the function update the state of the product to "not selected" and remove it from the shopping cart tab view.
 function deleteItem(myItem) {
+    const father = myItem.parentElement;
+    const article = father.parentElement;
     let itemID = myItem.dataset.product;
     let newFilter = userData.currentSelectedProducts.filter(item => item.idProduct != itemID);
     userData.currentSelectedProducts = newFilter;
-    showProductsSelected();
-    addToCardBtn(itemID);
+    article.classList.add("deleted-item");
+    setTimeout(() => {
+        showProductsSelected();
+        addToCardBtn(itemID);
+    }, 300);
+    
 }
 
 // function that returns an string with all the ids of the products that are currently selected by the user.
