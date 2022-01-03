@@ -1,7 +1,9 @@
 var btnHomeMenu = null, userData = null, arrayProducts = [], btnShowShoppingCard = null, linkLogo, textLogo, 
 wrapperHomeShoppItems, totalTable, lastIds = "", inputsAccount, wrapperProducts, productDetailWrapper, currentProductFilter = "all";
-var detailImgProduct, detailPriceProduct, detailTittleProduct, detailDescripProduct, detailBtn, detailBtnText, previousId = "";
+var detailImgProduct, detailPriceProduct, detailTittleProduct, detailDescripProduct, detailBtn, detailBtnText, 
+previousId = "", itemAll, homeSearchInput;
 // another way of getting attributes:  element.getAttribute('attribute-name'); 
+// document.getElementById("myBtn").click();  -- code to click a determined button.
 
 fetch("../data/users.json")
 .then(data => data.json())
@@ -38,6 +40,8 @@ window.addEventListener("load", function() {
         productDetailWrapper = document.getElementById("js-product-detail");
         detailBtn = document.getElementById("js-detail-btn");
         detailBtnText = document.getElementById("js-detail-btn-text");
+        itemAll = document.getElementById("js-all");
+        homeSearchInput = document.getElementById("search-input");
 
         detailImgProduct = document.getElementById("js-detail-img");
         detailPriceProduct = document.getElementById("js-detail-price");
@@ -110,10 +114,11 @@ function hideMenu() {
 // change the look of the nav list on the home section when a different item of the list is clicked.
 function handleHomeList(myElement) {
     if(!myElement.classList[1]) { // execute the code when the item clicked is not selected.
-        const oldSelectedItem = document.getElementsByClassName("selected");
-        oldSelectedItem[0].classList.remove("selected");
+        const oldSelectedItem = document.querySelector(".selected");
+        oldSelectedItem.classList.remove("selected");
         myElement.classList.add("selected");
         currentProductFilter = myElement.innerHTML.toLowerCase();
+        homeSearchInput.value = "";
         loadProducts(myElement.innerHTML.toLowerCase());
     }
 }
@@ -135,9 +140,9 @@ function showShoppingCard() {
 }
 
 // the function loads all the products of the home section depending of the filter parameter.
-function loadProducts(filter = "all") {
+function loadProducts(filter = "all", searchInput = "") {
     let infoProduct = null, concatArticles = "";
-    let newFilterOfProducts = filterHomeProducts(filter);
+    let newFilterOfProducts = filterHomeProducts(filter, searchInput);
 
     for(let productItem in newFilterOfProducts) {
         infoProduct = newFilterOfProducts[productItem];
@@ -284,11 +289,15 @@ function addToShopp(myElement) {
 }
 
 // function that filters the list of products depending on the filter type passed passed as parameter.  
-function filterHomeProducts(filterType) {
+function filterHomeProducts(filterType, searchInput) {
     if(filterType != "all") {
         return arrayProducts.filter(item => item.type == filterType);
     } else {
-        return arrayProducts;
+        if(searchInput != "") {
+            return getFilteredBySearchProducts(searchInput);
+        } else {
+            return arrayProducts;
+        }
     }
 }
 
@@ -297,6 +306,26 @@ function changeFilterSinceNav(filter) {
     const newElement = document.getElementById("js-" + filter);
     handleHomeList(newElement);
     hideMenu();
+}
+
+function getFilteredBySearchProducts(inputFilter) {
+    console.log(inputFilter);
+    return arrayProducts.filter(item => item.name.includes(inputFilter));
+}
+
+// function that make search of products depending on what the user wrote in the input search field.
+function searchHandler(event) {
+    /* console.log(event); */
+    if(event.keyCode == 13) { // keyCode:13 means the enter key.
+        event.preventDefault(); // Cancel the default action, if needed        
+        let searchFilter = event.target.value;
+        if(!itemAll.classList[1]) { // add class selected if the all item is not selected.
+            const oldSelectedItem = document.querySelector(".selected");
+            oldSelectedItem.classList.remove("selected");
+            itemAll.classList.add("selected");
+        }
+        loadProducts("all", searchFilter);
+    }
 }
 
 // function that converts a number passed as a parameter to a string in currency format and returns it.
