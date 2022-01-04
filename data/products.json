@@ -399,6 +399,19 @@
             "description": "Carhartt has made durable workwear you can count on as you tackle the toughest jobs. This men's long-sleeve t-shirt bears the name proudly on the sleeve."
         },
         {
+            "id": "n3246",
+            "name": "brown storage",
+            "price": 87,
+            "type": "furniture",
+            "imgs": [
+                {
+                    "img": "../assets/img/brown-storage.jpeg",
+                    "size": "normal"
+                }
+            ],
+            "description": "Mdesign vertical furniture storage tower - sturdy steel frame, easily removable fabric containers."
+        },
+        {
             "id": "n3243",
             "name": "drone",
             "price": 574,
