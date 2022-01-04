@@ -231,7 +231,6 @@ function deleteItem(myItem) {
         showProductsSelected();
         addToCardBtn(itemID);
     }, 300);
-    
 }
 
 // function that returns an string with all the ids of the products that are currently selected by the user.
