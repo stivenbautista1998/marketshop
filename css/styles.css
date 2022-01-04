@@ -600,7 +600,7 @@ a.grey__message:hover, a.green__message:hover {
 
 .deleted-item {
     border-radius: 10px;
-    background-color: #D8D8D8;
+    background-color: var(--text-input);
     transform: translateX(-100vw);
 }
 
