@@ -599,6 +599,8 @@ a.grey__message:hover, a.green__message:hover {
 }
 
 .deleted-item {
+    border-radius: 10px;
+    background-color: #D8D8D8;
     transform: translateX(-100vw);
 }
 
