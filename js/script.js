@@ -163,7 +163,7 @@ function loadProducts(filter = "all", searchInput = "") {
                                 <div class="article-section-item__content ${isSelected[0] ? 'clickedBtn' : ''}">
                                     <div class="card-text">
                                         <span class="grey__message price-product">${becomeDollar(infoProduct.price)}</span>
-                                        <span class="green__message name-product">${infoProduct.name}</span>
+                                        <span class="green__message name-product">${capitalizeAll(infoProduct.name)}</span>
                                     </div>
                                     <div class="circle-border"></div>
                                     <img id="${infoProduct.id}" class="add_to_card" onclick="addToCardBtn('${infoProduct.id}')" src="${imgUrl}" alt="image of a shopping car">
@@ -201,7 +201,7 @@ function showProductsSelected() {
                     concatArticles += "<article class='shopping-card-item'>" +
                                             "<div class='front-container'>" +
                                                 "<div class='image-border' style='background-image: url(" + infoProduct.imgs[0].img + ");'></div>" +
-                                                "<span class='name-product'>" + infoProduct.name + "</span>" +
+                                                "<span class='name-product'>" + capitalizeAll(infoProduct.name) + "</span>" +
                                             "</div>" +
                                             "<div class='back-container'>" +
                                                 "<span class='price-product'>" + becomeDollar(infoProduct.price) + "</span>" +
@@ -271,7 +271,7 @@ function showProductDetails(idProduct) {
         const productInfo = arrayProducts.filter(item => item.id == idProduct);
         detailImgProduct.style.backgroundImage = `url('${productInfo[0].imgs[0].img}')`;
         detailPriceProduct.innerHTML = becomeDollar(productInfo[0].price);
-        detailTittleProduct.innerHTML = productInfo[0].name;
+        detailTittleProduct.innerHTML = capitalizeAll(productInfo[0].name);
         detailDescripProduct.innerHTML = productInfo[0].description;
         detailBtn.setAttribute("data-product", idProduct);
         previousId = productInfo[0].id;
@@ -363,4 +363,14 @@ function becomeDollar(value) {
         currency: 'USD',
     });
     return formatter.format(value);  
+}
+
+// function that returns a string with the first letter of each word in upper-case and the rest of it in lower-case
+function capitalizeAll(str) {
+    let arrWords = str.split(" "), result = "";
+    for(let i in arrWords) {
+        const lower = arrWords[i].toLowerCase();
+        result += arrWords[i].charAt(0).toUpperCase() + lower.slice(1) + (arrWords.length - 1 != i ? " " : "");
+    }
+    return result;
 }
