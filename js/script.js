@@ -1,7 +1,8 @@
 var btnHomeMenu = null, userData = null, arrayProducts = [], btnShowShoppingCard = null, linkLogo, textLogo, 
 wrapperHomeShoppItems, totalTable, lastIds = "", inputsAccount, wrapperProducts, productDetailWrapper, currentProductFilter = "all";
 var detailImgProduct, detailPriceProduct, detailTittleProduct, detailDescripProduct, detailBtn, detailBtnText, 
-previousId = "", itemAll, homeSearchInput, searchCleanIcon, getTotalLoadedProducts = 0;
+previousId = "", itemAll, homeSearchInput, searchCleanIcon, getTotalLoadedProducts = 0, userText, passText, errorMessage,
+labelsLogin, btnLogin, firstChange = false;
 // another way of getting attributes:  element.getAttribute('attribute-name'); 
 // document.getElementById("myBtn").click();  -- code to click a determined button.
 
@@ -21,11 +22,16 @@ fetch("../data/products.json")
 // execute the application code depending of the current web page when the whole app loaded.
 window.addEventListener("load", function() {
     if(window.location.href == "http://127.0.0.1:5500/index.html") {
-        const btnLogin = this.document.getElementById("login-btn");
+        userText = document.getElementById("js-user-txt");
+        passText = document.getElementById("js-password-txt");
+        errorMessage = document.getElementById("js-error-message");
+        labelsLogin = document.getElementsByTagName("label");
+        btnLogin = this.document.getElementById("login-btn");
     
-        btnLogin.addEventListener("click", function() {
-            window.location.href = "/views/home.html";
-        });
+        btnLogin.addEventListener("click", validateLogin);
+        userText.addEventListener("input", changeUserLogin);
+        passText.addEventListener("input", changeUserLogin);
+        passText.addEventListener("keyup", checkLoginText);
     }
 
     if(window.location.href == "http://127.0.0.1:5500/views/home.html") {
@@ -263,6 +269,48 @@ function editAccount(myElement) {
 // function that change the url of the webpage to my-order view.
 function showDetails() {
     window.location.href = "http://127.0.0.1:5500/views/my-order.html";
+}
+
+function validateLogin() {
+    if((userText.value == userData.email) && (passText.value == userData.password)) {
+        console.log("Is correct!!");
+        window.location.href = "/views/home.html";
+    } else {
+        console.log("Is wrong!!");
+        userText.focus();
+        showErrorLook(true);
+        firstChange = true;
+    }
+}
+
+function changeUserLogin() {
+    if(firstChange) {
+        showErrorLook(false);
+        firstChange = false;
+        console.log("is changing =)!!");
+    }
+}
+
+function checkLoginText(event) {
+    if(event.keyCode == 13) { // keyCode:13 means the enter key.
+        validateLogin();
+    }
+}
+
+function showErrorLook(showError) {
+    userText.style.border = (showError ? "1px solid #D25050" : "none");
+    passText.style.border = (showError ? "1px solid #D25050" : "none");
+    btnLogin.disabled = (showError ? "disabled" : false);
+    labelsLogin[0].style.color = (showError ? "#D25050" : "#000");
+    labelsLogin[1].style.color = (showError ? "#D25050" : "#000");
+
+    if(showError) {
+        btnLogin.classList.add("disabled-btn");
+        errorMessage.classList.add("show-error-message");
+    } else {
+        btnLogin.classList.remove("disabled-btn");
+        errorMessage.classList.remove("show-error-message");
+    }
 }
 
 // function that shows and update the values of the product detail view.

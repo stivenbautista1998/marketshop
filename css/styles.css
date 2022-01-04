@@ -112,7 +112,7 @@ a.grey__message:hover, a.green__message:hover {
 }
 
 .login-section .green--btn, .main-my-account .green--btn {
-    margin-top: 1.5em;
+    margin-top: 2em;
 }
 
 .section-down .white--btn, .section-down .green--btn {
@@ -227,10 +227,6 @@ a.grey__message:hover, a.green__message:hover {
     padding: 0.5em 1em;
     color: var(--hospital-green);
     font-weight: bold;
-}
-
-.search-home-section .close-vissible {
-    visibility: visible;
 }
 
 .header-home-section__text {
@@ -538,10 +534,6 @@ a.grey__message:hover, a.green__message:hover {
     border-bottom: 1px solid var(--background-color);
 }
 
-/* .menu-active + .header-home-section .header-home-nav {
-    border-bottom: 1px solid var(--background-color);
-} */
-
 .product-detail-img {
     width: 320px;
     height: 320px;
@@ -596,6 +588,23 @@ a.grey__message:hover, a.green__message:hover {
     position: absolute;
     top: 16px;
     right: 11px;
+}
+
+.disabled-btn {
+    background-color: #E7E7E7;
+    border: none;
+}
+
+.error-message {
+    position: absolute;
+    color: #D25050;
+    font-size: 1.1rem;
+    left: calc(50% - 106.5px);
+    visibility: hidden;
+}
+
+.search-home-section .close-vissible, .show-error-message {
+    visibility: visible;
 }
 
 .deleted-item {
