@@ -2,7 +2,7 @@ var btnHomeMenu = null, userData = null, arrayProducts = [], btnShowShoppingCard
 wrapperHomeShoppItems, totalTable, lastIds = "", inputsAccount, wrapperProducts, productDetailWrapper, currentProductFilter = "all";
 var detailImgProduct, detailPriceProduct, detailTittleProduct, detailDescripProduct, detailBtn, detailBtnText, 
 previousId = "", itemAll, homeSearchInput, searchCleanIcon, getTotalLoadedProducts = 0, userText, passText, errorMessage,
-labelsLogin, btnLogin, firstChange = false;
+labelsLogin, btnLogin, firstChange = false, menuNav;
 // another way of getting attributes:  element.getAttribute('attribute-name'); 
 // document.getElementById("myBtn").click();  -- code to click a determined button.
 
@@ -49,6 +49,7 @@ window.addEventListener("load", function() {
         itemAll = document.getElementById("js-all");
         homeSearchInput = document.getElementById("search-input");
         searchCleanIcon = document.getElementById("js-clean-search");
+        menuNav = document.getElementById("js-menu-nav");
 
         detailImgProduct = document.getElementById("js-detail-img");
         detailPriceProduct = document.getElementById("js-detail-price");
@@ -402,6 +403,15 @@ function cleanSearchInput() {
     homeSearchInput.value = "";
     searchCleanIcon.classList.remove("close-vissible");
     homeSearchInput.focus();
+}
+
+function handleMenuNav() {
+    console.log("It works!!");
+    if(menuNav.classList[1]) {
+        menuNav.classList.remove("show-section");
+    } else {
+        menuNav.classList.add("show-section");
+    }
 }
 
 // function that converts a number passed as a parameter to a string in currency format and returns it.
