@@ -148,15 +148,10 @@ a.grey__message:hover, a.green__message:hover {
 
 .header-home-nav {
     display: flex;
-    width: 100%;
-    background: var(--white);
+    max-width: 1180px;
+    margin: 0 auto;
     justify-content: space-between;
     padding: 1.4em;
-    box-shadow: 0px 2px 4px rgb(0 0 0 / 5%);
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 7;
 }
 
 .header-home-section__search {
@@ -219,6 +214,7 @@ a.grey__message:hover, a.green__message:hover {
 .header-home-section__list-option {
     display: inline-block;
     margin: 0 .5em;
+    cursor: pointer;
 }
 
 .selected {
@@ -247,6 +243,7 @@ a.grey__message:hover, a.green__message:hover {
 
 .article-section {
     width: 90%;
+    max-width: 1180px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -263,6 +260,7 @@ a.grey__message:hover, a.green__message:hover {
     border-radius: 10px;
     height: 137px;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .image-product {
@@ -538,6 +536,16 @@ a.grey__message:hover, a.green__message:hover {
     border-bottom: 1px solid var(--background-color);
 }
 
+.nav-section {
+    position: fixed;
+    width: 100%;
+    background: var(--white);
+    box-shadow: 0px 2px 4px rgb(0 0 0 / 5%);
+    left: 0;
+    top: 0;
+    z-index: 7;
+}
+
 .product-detail-img {
     width: 320px;
     height: 320px;
@@ -617,7 +625,7 @@ a.grey__message:hover, a.green__message:hover {
     transform: translateX(-100vw);
 }
 
-.email-menu {
+.email-menu, .hide-section {
     display: none;
 }
 
@@ -753,5 +761,33 @@ a.grey__message:hover, a.green__message:hover {
     .new-img {
         width: 208px;
         height: 207px;
+    }
+}
+
+
+@media (min-width: 765px) {
+    .left-nav {
+        display: flex;
+        align-items: center;
+    }
+
+    .header-home-section__list {
+        display: none;
+    }
+
+    .left-nav .header-home-section__list {
+        display: inline-block;
+        width: auto;
+        margin-bottom: 0;
+        overflow: unset;
+        margin-left: 2em;
+    }
+
+    .search-home-section {
+        top: 62px;
+    }
+
+    .email-menu__list {
+        top: 40px;
     }
 }

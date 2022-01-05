@@ -55,6 +55,7 @@
     width: 40px;
     height: 40px;
     margin-top: .2em;
+    cursor: pointer;
     z-index: 2;
 }
 

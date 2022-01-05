@@ -74,25 +74,37 @@
         </div>
     </div>
     <header class="header-home-section">
-        <nav class="header-home-nav">
-            <img class="menu-icon" onclick="showMenu()" src="../assets/icons/menu-icon.svg" alt="menu icon">
-            <img class="logo-icon-small" src="../assets/icons/logo.svg" alt="logo of the webpage">
-            <h2 id="js-tittle-logo" class="hide-logo">Shopping cart</h2>
-            <div class="right-nav">
-                <div class="email-menu">
-                    <div onclick="handleMenuNav()" class="email-menu__front">
-                        <span class="email-menu__text"><!-- Loading... -->stivenb1994@gmail.com</span>
-                        <img class="arrow-down-icon" src="../assets/icons/arrow-down.svg" alt="arrow down image">
-                    </div>
-                    <div id="js-menu-nav" class="email-menu__list">
-                        <ul class="email-list-ul">
-                            <li class="email-list-ul__item"><a class="style-no-link" href="./my-orders.html">My orders</a></li>
-                            <li class="email-list-ul__item"><a class="style-no-link" href="./my-account.html">My account</a></li>
-                            <a href="../index.html" class="email-list-ul__item menu-tab__loggin">Sign out</a>
-                        </ul>
-                    </div>
+        <nav class="nav-section">
+            <div class="header-home-nav">
+                <img class="menu-icon" onclick="showMenu()" src="../assets/icons/menu-icon.svg" alt="menu icon">
+                <div class="left-nav">
+                    <img class="logo-icon-small" src="../assets/icons/logo.svg" alt="logo of the webpage">
+                    <ul id="home-nav" class="header-home-section__list hide-section">
+                        <li id="js-all" onclick="handleHomeList(this)" class="header-home-section__list-option selected">All</li>
+                        <li id="js-clothes" onclick="handleHomeList(this)" class="header-home-section__list-option">Clothes</li>
+                        <li id="js-electronics" onclick="handleHomeList(this)" class="header-home-section__list-option">Electronics</li>
+                        <li id="js-furnitures" onclick="handleHomeList(this)" class="header-home-section__list-option">Furniture</li>
+                        <li id="js-toys" onclick="handleHomeList(this)" class="header-home-section__list-option">Toys</li>
+                        <li id="js-others" onclick="handleHomeList(this)" class="header-home-section__list-option">Others</li>
+                    </ul>
                 </div>
-                <img class="shopping-cart" onclick="showShoppingCard()" src="../assets/icons/shopping-cart.svg" alt="icon of a shopping cart">
+                <h2 id="js-tittle-logo" class="hide-logo">Shopping cart</h2>
+                <div class="right-nav">
+                    <div class="email-menu">
+                        <div onclick="handleMenuNav()" class="email-menu__front">
+                            <span class="email-menu__text"><!-- Loading... -->stivenb1994@gmail.com</span>
+                            <img class="arrow-down-icon" src="../assets/icons/arrow-down.svg" alt="arrow down image">
+                        </div>
+                        <div id="js-menu-nav" class="email-menu__list">
+                            <ul class="email-list-ul">
+                                <li class="email-list-ul__item"><a class="style-no-link" href="./my-orders.html">My orders</a></li>
+                                <li class="email-list-ul__item"><a class="style-no-link" href="./my-account.html">My account</a></li>
+                                <a href="../index.html" class="email-list-ul__item menu-tab__loggin">Sign out</a>
+                            </ul>
+                        </div>
+                    </div>
+                    <img class="shopping-cart" onclick="showShoppingCard()" src="../assets/icons/shopping-cart.svg" alt="icon of a shopping cart">
+                </div>
             </div>
         </nav>
         <div class="general-input center-search search-home-section">
