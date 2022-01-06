@@ -85,6 +85,7 @@
 .clean-search {
     right: 12px;
     visibility: hidden;
+    cursor: pointer;
 }
 
 .not-found-icon {

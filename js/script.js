@@ -442,7 +442,6 @@ function getFilteredBySearchProducts(inputFilter) {
 
 // function that make search of products depending on what the user wrote in the input search field.
 function searchHandler(event) {
-    /* console.log(event); */
     if(event.target.value == "") {
         if(searchCleanIcon.classList[2]) {
             searchCleanIcon.classList.remove("close-vissible");
