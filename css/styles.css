@@ -643,7 +643,7 @@ a.grey__message:hover, a.green__message:hover {
         display: none;
     }
 
-    .new-img {
+    .article-section-item__img.new-img {
         width: 173px;
         height: 172px;
     }
@@ -782,7 +782,7 @@ a.grey__message:hover, a.green__message:hover {
 
 
 @media (min-width: 730px) {
-    .new-img {
+    .article-section-item__img.new-img {
         width: 208px;
         height: 207px;
     }
