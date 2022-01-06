@@ -2,7 +2,7 @@ var btnHomeMenu = null, userData = null, arrayProducts = [], btnShowShoppingCard
 wrapperHomeShoppItems, totalTable, lastIds = "", inputsAccount, wrapperProducts, productDetailWrapper, currentProductFilter = "all";
 var detailImgProduct, detailPriceProduct, detailTittleProduct, detailDescripProduct, detailBtn, detailBtnText, 
 previousId = "", homeSearchInput, searchCleanIcon, getTotalLoadedProducts = 0, userText, passText, errorMessage,
-labelsLogin, btnLogin, firstChange = false, menuNav, itemAllMobile, itemAllDesk, leftNav/* , linkLogo */;
+labelsLogin, btnLogin, firstChange = false, menuNav, itemAllMobile, itemAllDesk, leftNav, headerHomeNav, myStyle;
 // another way of getting attributes:  element.getAttribute('attribute-name'); 
 // document.getElementById("myBtn").click();  -- code to click a determined button.
 
@@ -52,12 +52,15 @@ window.addEventListener("load", function() {
         searchCleanIcon = document.getElementById("js-clean-search");
         menuNav = document.getElementById("js-menu-nav");
         leftNav = document.getElementById("js-left-nav");
+        headerHomeNav = document.querySelector(".header-home-nav");
 
         detailImgProduct = document.getElementById("js-detail-img");
         detailPriceProduct = document.getElementById("js-detail-price");
         detailTittleProduct = document.getElementById("js-detail-tittle");
         detailDescripProduct = document.getElementById("js-detail-descrip");
         loadProducts();
+
+        myStyle = window.getComputedStyle(headerHomeNav) || headerHomeNav.currentStyle;
         
         let lastScrollY = window.scrollY;
         window.addEventListener("scroll", () => {
@@ -84,7 +87,19 @@ window.addEventListener("resize", () => {
             leftNav.classList.remove("hide-logo");
         }
     }
+    calcShoppingTabRightMargin();
 });
+
+// function that set the margin right of the shopping cart tab depending of the screen size.
+function calcShoppingTabRightMargin() {
+    if(this.innerWidth < 500) {
+        btnShowShoppingCard.style.right = 0;
+    } else if(this.innerWidth < 1187) {
+        btnShowShoppingCard.style.right = "5px";
+    } else {
+        btnShowShoppingCard.style.right = myStyle.marginRight;
+    }
+}
 
 // function that change the url of the webpage to the create account view.
 function showMyAccount() {
@@ -186,8 +201,11 @@ function showShoppingCard() {
             btnShowShoppingCard.classList.remove("show-section");
         } else if(btnShowShoppingCard.classList[1] == "menu-active") {
             removeShoppingTabStyle();
+            calcShoppingTabRightMargin();
         } else {
             btnShowShoppingCard.classList.add("show-section");
+            console.log(myStyle.marginRight);
+            calcShoppingTabRightMargin();
             showProductsSelected();
         }
     }
