@@ -188,6 +188,7 @@ function showShoppingCard() {
             removeShoppingTabStyle();
         } else {
             btnShowShoppingCard.classList.add("show-section");
+            showProductsSelected();
         }
     }
 }
