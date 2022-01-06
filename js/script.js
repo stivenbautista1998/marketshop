@@ -122,7 +122,6 @@ function hideMenu() {
 // change the look of the nav list on the home section when a different item of the list is clicked.
 function handleHomeList(myElement) {
     const fater = myElement.parentElement;
-    console.log(fater.id);
     if(!myElement.classList[1]) { // execute the code when the item clicked is not selected.
         const oldSelectedItemMobile = document.querySelector(".selected-item-mobile");
         const oldSelectedItemDesk = document.querySelector(".selected-item-desk");
@@ -380,7 +379,7 @@ function filterHomeProducts(filterType, searchInput) {
 
 // function that execute the filter on the home section and close the nav tab.
 function changeFilterSinceNav(filter) {
-    const newElement = document.getElementById("js-" + filter);
+    const newElement = document.getElementById("js-" + filter + "-mobile");
     handleHomeList(newElement);
     hideMenu();
 }
