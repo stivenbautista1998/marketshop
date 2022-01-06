@@ -1,8 +1,8 @@
 var btnHomeMenu = null, userData = null, arrayProducts = [], btnShowShoppingCard = null, linkLogo, textLogo, 
 wrapperHomeShoppItems, totalTable, lastIds = "", inputsAccount, wrapperProducts, productDetailWrapper, currentProductFilter = "all";
 var detailImgProduct, detailPriceProduct, detailTittleProduct, detailDescripProduct, detailBtn, detailBtnText, 
-previousId = "", itemAll, homeSearchInput, searchCleanIcon, getTotalLoadedProducts = 0, userText, passText, errorMessage,
-labelsLogin, btnLogin, firstChange = false, menuNav;
+previousId = "", homeSearchInput, searchCleanIcon, getTotalLoadedProducts = 0, userText, passText, errorMessage,
+labelsLogin, btnLogin, firstChange = false, menuNav, itemAllMobile, itemAllDesk;
 // another way of getting attributes:  element.getAttribute('attribute-name'); 
 // document.getElementById("myBtn").click();  -- code to click a determined button.
 
@@ -46,7 +46,8 @@ window.addEventListener("load", function() {
         productDetailWrapper = document.getElementById("js-product-detail");
         detailBtn = document.getElementById("js-detail-btn");
         detailBtnText = document.getElementById("js-detail-btn-text");
-        itemAll = document.getElementById("js-all");
+        itemAllMobile = document.getElementById("js-all-mobile");
+        itemAllDesk = document.getElementById("js-all-desk");
         homeSearchInput = document.getElementById("search-input");
         searchCleanIcon = document.getElementById("js-clean-search");
         menuNav = document.getElementById("js-menu-nav");
@@ -402,10 +403,13 @@ function searchHandler(event) {
 
     if(event.keyCode == 13) { // keyCode:13 means the enter key.
         event.preventDefault(); // Cancel the default action, if needed        
-        if(!itemAll.classList[1]) { // add class selected if the all item is not selected.
-            const oldSelectedItem = document.querySelector(".selected");
-            oldSelectedItem.classList.remove("selected");
-            itemAll.classList.add("selected");
+        if(!itemAllMobile.classList[1]) { // add class selected if the all item is not selected.
+            const oldSelectedItemMobile = document.querySelector(".selected-item-mobile");
+            oldSelectedItemMobile.classList.remove("selected-item-mobile");
+            const oldSelectedItemDesk = document.querySelector(".selected-item-desk");
+            oldSelectedItemDesk.classList.remove("selected-item-desk");
+            itemAllMobile.classList.add("selected-item-mobile");
+            itemAllDesk.classList.add("selected-item-desk");
         }
         loadProducts("all", event.target.value);
     }
