@@ -615,10 +615,6 @@ a.grey__message:hover, a.green__message:hover {
     visibility: hidden;
 }
 
-.search-home-section .close-vissible, .show-error-message {
-    visibility: visible;
-}
-
 .deleted-item {
     border-radius: 10px;
     background-color: var(--text-input);
@@ -627,6 +623,10 @@ a.grey__message:hover, a.green__message:hover {
 
 .email-menu, .hide-section {
     display: none;
+}
+
+.no-scroll {
+    overflow: hidden;
 }
 
 @media (min-width: 415px) {
@@ -697,6 +697,10 @@ a.grey__message:hover, a.green__message:hover {
 }
 
 @media (min-width: 500px) {
+    #body-home {
+        overflow: scroll;
+    }
+
     .menu-icon {
         display: none;
     }
@@ -751,7 +755,18 @@ a.grey__message:hover, a.green__message:hover {
         margin-right: .5em;
     }
 
-    .show-section {
+    .shopping-card-tab {
+        max-width: 320px;
+        max-height: 500px;
+        right: 5px;
+        top: 54px;
+        box-shadow: 0px 2px 4px rgb(0 0 0 / 10%);
+        border-radius: 10px;
+        transform: translateX(0);
+        visibility: hidden;
+    }
+
+    .search-home-section .close-vissible, .show-error-message, .show-section, .menu-active {
         visibility: visible;
     }
 }
@@ -789,5 +804,9 @@ a.grey__message:hover, a.green__message:hover {
 
     .email-menu__list {
         top: 40px;
+    }
+
+    .shopping-card-tab {
+        top: 65px;
     }
 }

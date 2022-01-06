@@ -1,8 +1,8 @@
-var btnHomeMenu = null, userData = null, arrayProducts = [], btnShowShoppingCard = null, linkLogo, textLogo, 
+var btnHomeMenu = null, userData = null, arrayProducts = [], btnShowShoppingCard = null, textLogo, 
 wrapperHomeShoppItems, totalTable, lastIds = "", inputsAccount, wrapperProducts, productDetailWrapper, currentProductFilter = "all";
 var detailImgProduct, detailPriceProduct, detailTittleProduct, detailDescripProduct, detailBtn, detailBtnText, 
 previousId = "", homeSearchInput, searchCleanIcon, getTotalLoadedProducts = 0, userText, passText, errorMessage,
-labelsLogin, btnLogin, firstChange = false, menuNav, itemAllMobile, itemAllDesk;
+labelsLogin, btnLogin, firstChange = false, menuNav, itemAllMobile, itemAllDesk, leftNav/* , linkLogo */;
 // another way of getting attributes:  element.getAttribute('attribute-name'); 
 // document.getElementById("myBtn").click();  -- code to click a determined button.
 
@@ -38,7 +38,7 @@ window.addEventListener("load", function() {
         const homeSearch = this.document.querySelector(".search-home-section");
         btnHomeMenu = this.document.getElementById("js-menu-tab");
         btnShowShoppingCard = this.document.getElementById("js-shopping-card-tab");
-        linkLogo = this.document.getElementById("js-link-logo");
+        /* linkLogo = this.document.getElementById("js-link-logo"); */
         textLogo = this.document.getElementById("js-tittle-logo");
         wrapperHomeShoppItems =  this.document.getElementById("js-shopping-container-items");
         totalTable = this.document.getElementById("js-shopping-total");
@@ -51,6 +51,7 @@ window.addEventListener("load", function() {
         homeSearchInput = document.getElementById("search-input");
         searchCleanIcon = document.getElementById("js-clean-search");
         menuNav = document.getElementById("js-menu-nav");
+        leftNav = document.getElementById("js-left-nav");
 
         detailImgProduct = document.getElementById("js-detail-img");
         detailPriceProduct = document.getElementById("js-detail-price");
@@ -72,6 +73,16 @@ window.addEventListener("load", function() {
 
     if(window.location.href == "http://127.0.0.1:5500/views/my-account.html") {
         inputsAccount = document.getElementsByClassName("general-input");
+    }
+});
+
+// when the screen is hugger than 499px then it will remove the text "Shopping cart" and will show the image icon.
+window.addEventListener("resize", () => {
+    if(this.innerWidth >= 500) {
+        if(textLogo.classList[0] != "hide-logo") {
+            textLogo.classList.add("hide-logo");
+            leftNav.classList.remove("hide-logo");
+        }
     }
 });
 
@@ -111,13 +122,13 @@ function addToCardBtn(idMyElement) {
 // function that show the menu of the home section
 function showMenu() {
     btnHomeMenu.classList.add("menu-active");
-    document.body.style.overflow = "hidden";
+    document.body.classList.add("no-scroll");
 }
 
 // function that hide the menu of the home section
 function hideMenu() {
     btnHomeMenu.classList.remove("menu-active");
-    document.body.style.overflow = "scroll";
+    document.body.classList.remove("no-scroll");
 }
 
 // change the look of the nav list on the home section when a different item of the list is clicked.
@@ -149,19 +160,35 @@ function handleHomeList(myElement) {
     }
 }
 
+// function created to remove the styles added when showing the shopping cart tab.
+function removeShoppingTabStyle() {
+    btnShowShoppingCard.classList.remove("menu-active");
+    document.body.classList.remove("no-scroll");
+    textLogo.classList.add("hide-logo");
+    leftNav.classList.remove("hide-logo");
+}
+
 // the function shows or hides the shopping cart tab when the shopping cart button of the home section is clicked.
 function showShoppingCard() {
-    if(btnShowShoppingCard.classList[1] == "menu-active") {
-        btnShowShoppingCard.classList.remove("menu-active");
-        document.body.style.overflow = "scroll";
-        textLogo.classList.add("hide-logo");
-        linkLogo.classList.remove("hide-logo");
-    } else {
-        btnShowShoppingCard.classList.add("menu-active");
-        document.body.style.overflow = "hidden";
-        linkLogo.classList.add("hide-logo");
-        textLogo.classList.remove("hide-logo");
-        showProductsSelected();
+    if(window.innerWidth < 500) { // if the screen size is more less than 500px then work with the mobile class for menu.  
+        btnShowShoppingCard.classList.remove("show-section");
+        if(btnShowShoppingCard.classList[1] == "menu-active") {
+            removeShoppingTabStyle();
+        } else {
+            btnShowShoppingCard.classList.add("menu-active");
+            document.body.classList.add("no-scroll");
+            leftNav.classList.add("hide-logo");
+            textLogo.classList.remove("hide-logo");
+            showProductsSelected();
+        }
+    } else { // if screen size >= 500px then work with the menu class for larger devices.
+        if(btnShowShoppingCard.classList[1] == "show-section") {
+            btnShowShoppingCard.classList.remove("show-section");
+        } else if(btnShowShoppingCard.classList[1] == "menu-active") {
+            removeShoppingTabStyle();
+        } else {
+            btnShowShoppingCard.classList.add("show-section");
+        }
     }
 }
 
@@ -286,6 +313,7 @@ function showDetails() {
     window.location.href = "http://127.0.0.1:5500/views/my-order.html";
 }
 
+// function that validates if the login info is correct.
 function validateLogin() {
     if((userText.value == userData.email) && (passText.value == userData.password)) {
         console.log("Is correct!!");
@@ -298,6 +326,7 @@ function validateLogin() {
     }
 }
 
+// shows the error look in the login section when the firstChange variable is set to true. (which means is the first time)
 function changeUserLogin() {
     if(firstChange) {
         showErrorLook(false);
@@ -306,12 +335,14 @@ function changeUserLogin() {
     }
 }
 
+// track when the user press enter to execute the login function.
 function checkLoginText(event) {
     if(event.keyCode == 13) { // keyCode:13 means the enter key.
         validateLogin();
     }
 }
 
+// function that shows the styles the user will see when typing wrong information in the login section.
 function showErrorLook(showError) {
     userText.style.border = (showError ? "1px solid #D25050" : "none");
     passText.style.border = (showError ? "1px solid #D25050" : "none");
@@ -422,8 +453,8 @@ function cleanSearchInput() {
     homeSearchInput.focus();
 }
 
+// function that shows the little tab of options for larger devices when the user email is clicked in the home section.
 function handleMenuNav() {
-    console.log("It works!!");
     if(menuNav.classList[1]) {
         menuNav.classList.remove("show-section");
     } else {

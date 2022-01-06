@@ -13,7 +13,7 @@
     <script src="../js/script.js"></script>
     <link rel="shortcut icon" href="../assets/icons/favicon.ico" type="image/x-icon">
 </head>
-<body>
+<body id="body-home">
     <div id="js-menu-tab" class="menu-tab">
         <img onclick="hideMenu()" class="close-icon" src="../assets/icons/x-icon.svg" alt="close icon">
         <div>
@@ -77,7 +77,7 @@
         <nav class="nav-section">
             <div class="header-home-nav">
                 <img class="menu-icon" onclick="showMenu()" src="../assets/icons/menu-icon.svg" alt="menu icon">
-                <div class="left-nav">
+                <div id="js-left-nav" class="left-nav">
                     <img id="js-link-logo" class="logo-icon-small" src="../assets/icons/logo.svg" alt="logo of the webpage">
                     <ul id="home-nav-desk" class="header-home-section__list hide-section">
                         <li id="js-all-desk" onclick="handleHomeList(this)" class="header-home-section__list-option selected-item-desk">All</li>
