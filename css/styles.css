@@ -692,6 +692,10 @@ a.grey__message:hover, a.green__message:hover {
         margin-top: 2.5em;
     }
 
+    .shopping-card-bottom .green--btn {
+        margin-top: 0;
+    }
+
     .general-button {
         width: 100%;
     }
