@@ -121,14 +121,28 @@ function hideMenu() {
 
 // change the look of the nav list on the home section when a different item of the list is clicked.
 function handleHomeList(myElement) {
+    const fater = myElement.parentElement;
+    console.log(fater.id);
     if(!myElement.classList[1]) { // execute the code when the item clicked is not selected.
-        const oldSelectedItem = document.querySelector(".selected");
-        oldSelectedItem.classList.remove("selected");
-        myElement.classList.add("selected");
+        const oldSelectedItemMobile = document.querySelector(".selected-item-mobile");
+        const oldSelectedItemDesk = document.querySelector(".selected-item-desk");
+        oldSelectedItemDesk.classList.remove("selected-item-desk");
+        oldSelectedItemMobile.classList.remove("selected-item-mobile");
+        if(fater.id == "home-nav-mobile") {
+            myElement.classList.add("selected-item-mobile");
+            const mobileItem = document.getElementById("js-" + myElement.innerHTML.toLowerCase() + "-desk");
+            mobileItem.classList.add("selected-item-desk");
+        } else if(fater.id == "home-nav-desk") {
+            myElement.classList.add("selected-item-desk");
+            const deskItem = document.getElementById("js-" + myElement.innerHTML.toLowerCase() + "-mobile");
+            deskItem.classList.add("selected-item-mobile");
+        }
+
         currentProductFilter = myElement.innerHTML.toLowerCase();
         homeSearchInput.value = "";
         searchCleanIcon.classList.remove("close-vissible");
         loadProducts(myElement.innerHTML.toLowerCase());
+        
     } else if(myElement.innerHTML == "All" && arrayProducts.length != getTotalLoadedProducts) {
         console.log("All item is been reoladed!!");
         loadProducts(); // is executed when the All filter is selected but not all the products are being shown.

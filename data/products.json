@@ -43,7 +43,7 @@
             "id": "n3225",
             "name": "night owl",
             "price": 97,
-            "type": "furniture",
+            "type": "furnitures",
             "imgs": [
                 {
                     "img": "../assets/img/furniture6.jpeg",
@@ -95,7 +95,7 @@
             "id": "n3221",
             "name": "living room",
             "price": 358,
-            "type": "furniture",
+            "type": "furnitures",
             "imgs": [
                 {
                     "img": "../assets/img/furniture2.jpeg",
@@ -173,7 +173,7 @@
             "id": "n3222",
             "name": "room furniture",
             "price": 425,
-            "type": "furniture",
+            "type": "furnitures",
             "imgs": [
                 {
                     "img": "../assets/img/furniture3.jpeg",
@@ -238,7 +238,7 @@
             "id": "n3208",
             "name": "round shelf",
             "price": 133,
-            "type": "furniture",
+            "type": "furnitures",
             "imgs": [
                 {
                     "img": "../assets/img/round_shelf.jpeg",
@@ -272,7 +272,7 @@
             "id": "n3220",
             "name": "primary chair",
             "price": 128,
-            "type": "furniture",
+            "type": "furnitures",
             "imgs": [
                 {
                     "img": "../assets/img/furniture1.jpeg",
@@ -311,7 +311,7 @@
             "id": "n3224",
             "name": "book table",
             "price": 43,
-            "type": "furniture",
+            "type": "furnitures",
             "imgs": [
                 {
                     "img": "../assets/img/furniture5.jpeg",
@@ -402,7 +402,7 @@
             "id": "n3246",
             "name": "brown storage",
             "price": 87,
-            "type": "furniture",
+            "type": "furnitures",
             "imgs": [
                 {
                     "img": "../assets/img/brown-storage.jpeg",
@@ -506,7 +506,7 @@
             "id": "n3223",
             "name": "standart chair",
             "price": 83,
-            "type": "furniture",
+            "type": "furnitures",
             "imgs": [
                 {
                     "img": "../assets/img/furniture4.jpeg",

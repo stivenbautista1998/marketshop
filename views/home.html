@@ -79,13 +79,13 @@
                 <img class="menu-icon" onclick="showMenu()" src="../assets/icons/menu-icon.svg" alt="menu icon">
                 <div class="left-nav">
                     <img id="js-link-logo" class="logo-icon-small" src="../assets/icons/logo.svg" alt="logo of the webpage">
-                    <ul id="home-nav" class="header-home-section__list hide-section">
-                        <li id="js-all" onclick="handleHomeList(this)" class="header-home-section__list-option selected">All</li>
-                        <li id="js-clothes" onclick="handleHomeList(this)" class="header-home-section__list-option">Clothes</li>
-                        <li id="js-electronics" onclick="handleHomeList(this)" class="header-home-section__list-option">Electronics</li>
-                        <li id="js-furnitures" onclick="handleHomeList(this)" class="header-home-section__list-option">Furniture</li>
-                        <li id="js-toys" onclick="handleHomeList(this)" class="header-home-section__list-option">Toys</li>
-                        <li id="js-others" onclick="handleHomeList(this)" class="header-home-section__list-option">Others</li>
+                    <ul id="home-nav-desk" class="header-home-section__list hide-section">
+                        <li id="js-all-desk" onclick="handleHomeList(this)" class="header-home-section__list-option selected-item-desk">All</li>
+                        <li id="js-clothes-desk" onclick="handleHomeList(this)" class="header-home-section__list-option">Clothes</li>
+                        <li id="js-electronics-desk" onclick="handleHomeList(this)" class="header-home-section__list-option">Electronics</li>
+                        <li id="js-furnitures-desk" onclick="handleHomeList(this)" class="header-home-section__list-option">Furnitures</li>
+                        <li id="js-toys-desk" onclick="handleHomeList(this)" class="header-home-section__list-option">Toys</li>
+                        <li id="js-others-desk" onclick="handleHomeList(this)" class="header-home-section__list-option">Others</li>
                     </ul>
                 </div>
                 <h2 id="js-tittle-logo" class="hide-logo">Shopping cart</h2>
@@ -112,13 +112,13 @@
             <input id="search-input" onkeyup="searchHandler(event)" class="header-home-section__search" type="text" placeholder="Search product">
             <img id="js-clean-search" onclick="cleanSearchInput()" class="search-home-icon clean-search" src="../assets/icons/x-icon.svg" alt="close icon">
         </div>
-        <ul id="home-nav" class="header-home-section__list">
-            <li id="js-all" onclick="handleHomeList(this)" class="header-home-section__list-option selected">All</li>
-            <li id="js-clothes" onclick="handleHomeList(this)" class="header-home-section__list-option">Clothes</li>
-            <li id="js-electronics" onclick="handleHomeList(this)" class="header-home-section__list-option">Electronics</li>
-            <li id="js-furnitures" onclick="handleHomeList(this)" class="header-home-section__list-option">Furniture</li>
-            <li id="js-toys" onclick="handleHomeList(this)" class="header-home-section__list-option">Toys</li>
-            <li id="js-others" onclick="handleHomeList(this)" class="header-home-section__list-option">Others</li>
+        <ul id="home-nav-mobile" class="header-home-section__list">
+            <li id="js-all-mobile" onclick="handleHomeList(this)" class="header-home-section__list-option selected-item-mobile">All</li>
+            <li id="js-clothes-mobile" onclick="handleHomeList(this)" class="header-home-section__list-option">Clothes</li>
+            <li id="js-electronics-mobile" onclick="handleHomeList(this)" class="header-home-section__list-option">Electronics</li>
+            <li id="js-furnitures-mobile" onclick="handleHomeList(this)" class="header-home-section__list-option">Furnitures</li>
+            <li id="js-toys-mobile" onclick="handleHomeList(this)" class="header-home-section__list-option">Toys</li>
+            <li id="js-others-mobile" onclick="handleHomeList(this)" class="header-home-section__list-option">Others</li>
         </ul>
         <span class="header-home-section__text">Order:</span> 
         <select class="header-home-section__order" name="" id="">
