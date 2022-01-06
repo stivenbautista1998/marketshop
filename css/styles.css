@@ -334,6 +334,7 @@ a.grey__message:hover, a.green__message:hover {
 
 .menu-tab__main-list__item, .menu-tab__logged__item {
     margin-bottom: 2.85em;
+    cursor: pointer;
 }
 
 .menu-tab__logged {
@@ -770,8 +771,12 @@ a.grey__message:hover, a.green__message:hover {
         visibility: hidden;
     }
 
-    .menu-active {
+    .search-home-section .close-vissible, .show-error-message, .show-section, .menu-active {
         visibility: visible;
+    }
+
+    .menu-tab {
+        transform: translateX(-100vw);
     }
 }
 
