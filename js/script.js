@@ -1,7 +1,7 @@
 var btnHomeMenu = null, userData = null, arrayProducts = [], btnShowShoppingCard = null, textLogo, 
 wrapperHomeShoppItems, totalTable, lastIds = "", inputsAccount, wrapperProducts, productDetailWrapper, currentProductFilter = "all";
 var detailImgProduct, detailPriceProduct, detailTittleProduct, detailDescripProduct, detailBtn, detailBtnText, 
-previousId = "", homeSearchInput, searchCleanIcon, getTotalLoadedProducts = 0, userText, passText, errorMessage,
+previousId = "", homeSearchInput, searchCleanIcon, getTotalLoadedProducts = 0, userText, passText, errorMessage, myHeader,
 labelsLogin, btnLogin, firstChange = false, menuNav, itemAllMobile, itemAllDesk, leftNav, headerHomeNav, myStyle, counter;
 // another way of getting attributes:  element.getAttribute('attribute-name'); 
 // document.getElementById("myBtn").click();  -- code to click a determined button.
@@ -38,7 +38,6 @@ window.addEventListener("load", function() {
         const homeSearch = this.document.querySelector(".search-home-section");
         btnHomeMenu = this.document.getElementById("js-menu-tab");
         btnShowShoppingCard = this.document.getElementById("js-shopping-card-tab");
-        /* linkLogo = this.document.getElementById("js-link-logo"); */
         textLogo = this.document.getElementById("js-tittle-logo");
         wrapperHomeShoppItems =  this.document.getElementById("js-shopping-container-items");
         totalTable = this.document.getElementById("js-shopping-total");
@@ -54,6 +53,7 @@ window.addEventListener("load", function() {
         leftNav = document.getElementById("js-left-nav");
         headerHomeNav = document.querySelector(".header-home-nav");
         counter = document.getElementById("js-counter-circle");
+        myHeader = document.querySelector(".nav-section");
 
         detailImgProduct = document.getElementById("js-detail-img");
         detailPriceProduct = document.getElementById("js-detail-price");
@@ -89,6 +89,9 @@ window.addEventListener("resize", () => {
                 leftNav.classList.remove("hide-logo");
             }
         }
+    }
+
+    if(window.location.href == "http://127.0.0.1:5500/views/home.html") {
         calcShoppingTabRightMargin();
     }
 });
@@ -97,10 +100,15 @@ window.addEventListener("resize", () => {
 function calcShoppingTabRightMargin() {
     if(this.innerWidth < 500) {
         btnShowShoppingCard.style.right = 0;
+        console.log("< 500: 0px");
     } else if(this.innerWidth < 1187) {
         btnShowShoppingCard.style.right = "5px";
+        console.log("< 1180: 5px");
     } else {
-        btnShowShoppingCard.style.right = myStyle.marginRight;
+        const shoppingTabMarginRight = (myHeader.offsetWidth - headerHomeNav.offsetWidth) / 2;
+        console.log(shoppingTabMarginRight);
+        btnShowShoppingCard.style.right = shoppingTabMarginRight + "px";
+        /* console.log(myStyle.marginRight); */
     }
 }
 
