@@ -634,6 +634,24 @@ a.grey__message:hover, a.green__message:hover {
     visibility: visible;
 }
 
+.right-nav {
+    position: relative;
+}
+
+.counter-circle {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    right: 0px;
+    top: -5px;
+    background-color: var(--hospital-green);
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
 @media (min-width: 415px) {
     .header-home-section__list-option:first-child.selected, .header-home-section__list-option:first-child {
         margin-left: 0;
@@ -710,6 +728,10 @@ a.grey__message:hover, a.green__message:hover {
         overflow: scroll;
     }
 
+    .counter-circle {
+        top: -4px;
+    }
+
     .menu-icon {
         display: none;
     }
@@ -717,6 +739,7 @@ a.grey__message:hover, a.green__message:hover {
     .right-nav {
         display: flex;
         align-items: center;
+        position: relative;
     }
 
     .email-menu {
@@ -821,5 +844,9 @@ a.grey__message:hover, a.green__message:hover {
 
     .shopping-card-tab {
         top: 65px;
+    }
+
+    .counter-circle {
+        top: 2px;
     }
 }

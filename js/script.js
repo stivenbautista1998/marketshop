@@ -2,7 +2,7 @@ var btnHomeMenu = null, userData = null, arrayProducts = [], btnShowShoppingCard
 wrapperHomeShoppItems, totalTable, lastIds = "", inputsAccount, wrapperProducts, productDetailWrapper, currentProductFilter = "all";
 var detailImgProduct, detailPriceProduct, detailTittleProduct, detailDescripProduct, detailBtn, detailBtnText, 
 previousId = "", homeSearchInput, searchCleanIcon, getTotalLoadedProducts = 0, userText, passText, errorMessage,
-labelsLogin, btnLogin, firstChange = false, menuNav, itemAllMobile, itemAllDesk, leftNav, headerHomeNav, myStyle;
+labelsLogin, btnLogin, firstChange = false, menuNav, itemAllMobile, itemAllDesk, leftNav, headerHomeNav, myStyle, counter;
 // another way of getting attributes:  element.getAttribute('attribute-name'); 
 // document.getElementById("myBtn").click();  -- code to click a determined button.
 
@@ -53,6 +53,7 @@ window.addEventListener("load", function() {
         menuNav = document.getElementById("js-menu-nav");
         leftNav = document.getElementById("js-left-nav");
         headerHomeNav = document.querySelector(".header-home-nav");
+        counter = document.getElementById("js-counter-circle");
 
         detailImgProduct = document.getElementById("js-detail-img");
         detailPriceProduct = document.getElementById("js-detail-price");
@@ -119,6 +120,7 @@ function addToCardBtn(idMyElement) {
     if(document.getElementById(idMyElement) === null) {
         let filteredProducts = userData.currentSelectedProducts.filter((item) => item.idProduct != idMyElement);
         userData.currentSelectedProducts = filteredProducts;
+        counter.textContent = userData.currentSelectedProducts.length;
     } else {
         const myElement = document.getElementById(idMyElement);
         const father = myElement.parentElement;
@@ -128,10 +130,12 @@ function addToCardBtn(idMyElement) {
             myElement.setAttribute('src', "../assets/icons/add_to_cart.svg");
             let filteredProducts = userData.currentSelectedProducts.filter((item) => item.idProduct != idMyElement);
             userData.currentSelectedProducts = filteredProducts;
+            counter.textContent = userData.currentSelectedProducts.length;
         } else {
             father.classList.add("clickedBtn");
             myElement.setAttribute('src', "../assets/icons/selected-to-buy.svg");
             userData.currentSelectedProducts.push({ idProduct: idMyElement });
+            counter.textContent = userData.currentSelectedProducts.length;
         }
     }
 }
