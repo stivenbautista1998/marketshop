@@ -81,13 +81,15 @@ window.addEventListener("load", function() {
 
 // when the screen is hugger than 499px then it will remove the text "Shopping cart" and will show the image icon.
 window.addEventListener("resize", () => {
-    if(this.innerWidth >= 500) {
-        if(textLogo.classList[0] != "hide-logo") {
-            textLogo.classList.add("hide-logo");
-            leftNav.classList.remove("hide-logo");
+    if(window.location.href == "http://127.0.0.1:5500/index.html") {
+        if(this.innerWidth >= 500) {
+            if(textLogo.classList[0] != "hide-logo") {
+                textLogo.classList.add("hide-logo");
+                leftNav.classList.remove("hide-logo");
+            }
         }
+        calcShoppingTabRightMargin();
     }
-    calcShoppingTabRightMargin();
 });
 
 // function that set the margin right of the shopping cart tab depending of the screen size.
@@ -333,11 +335,20 @@ function showDetails() {
 
 // function that validates if the login info is correct.
 function validateLogin() {
-    if((userText.value == userData.email) && (passText.value == userData.password)) {
-        console.log("Is correct!!");
-        window.location.href = "/views/home.html";
+    if(validateEmail(userText.value)) { // checking if the email has the correct format.
+        if((userText.value == userData.email) && (passText.value == userData.password)) {
+            console.log("Is correct!!");
+            window.location.href = "/views/home.html";
+        } else {
+            console.log("Is wrong!!");
+            labelsLogin[0].textContent = "Email address";
+            userText.focus();
+            showErrorLook(true);
+            firstChange = true;
+        }
     } else {
-        console.log("Is wrong!!");
+        console.log("wrong email given!!");
+        labelsLogin[0].textContent = "Enter a valid email address";
         userText.focus();
         showErrorLook(true);
         firstChange = true;
@@ -496,4 +507,10 @@ function capitalizeAll(str) {
         result += arrWords[i].charAt(0).toUpperCase() + lower.slice(1) + (arrWords.length - 1 != i ? " " : "");
     }
     return result;
+}
+
+// the function checks if the string given as a parameter is a correct email or not.
+function validateEmail(elementValue){      
+    var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    return emailPattern.test(elementValue); 
 }
