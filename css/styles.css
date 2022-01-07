@@ -652,6 +652,13 @@ a.grey__message:hover, a.green__message:hover {
     justify-content: center;
 }
 
+.filler {
+    border: 1px solid transparent;
+    flex: 0 0 140px;
+    padding: 0;
+    height: 0px;
+}
+
 @media (min-width: 415px) {
     .header-home-section__list-option:first-child.selected, .header-home-section__list-option:first-child {
         margin-left: 0;
@@ -673,6 +680,11 @@ a.grey__message:hover, a.green__message:hover {
     .article-section-item {
         margin: 0 .5em;
         margin-bottom: 2em;
+    }
+
+    .filler {
+        margin: 0 .5em 0px .5em;
+        flex: 0 0 173px;
     }
 }
 
@@ -812,6 +824,11 @@ a.grey__message:hover, a.green__message:hover {
     .article-section-item__img.new-img {
         width: 208px;
         height: 207px;
+    }
+
+    .filler {
+        margin: 0 0.5em 0px 0.5em;
+        flex: 0 0 208px;
     }
 }
 

@@ -243,7 +243,8 @@ function loadProducts(filter = "all", searchInput = "") {
                                 </div>
                             </article>`;
     }
-    wrapperProducts.innerHTML = concatArticles;
+    const fiveTails = `<div class="filler"></div><div class="filler"></div><div class="filler"></div><div class="filler"></div><div class="filler"></div>`;
+    wrapperProducts.innerHTML = concatArticles + fiveTails;
     if(concatArticles == "") {
         wrapperProducts.innerHTML = `<img src="../assets/icons/noresults.png" class="not-found-icon" alt="icon that indicates that there are no results">`;
     }
