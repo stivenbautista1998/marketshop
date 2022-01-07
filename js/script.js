@@ -204,7 +204,6 @@ function showShoppingCard() {
             calcShoppingTabRightMargin();
         } else {
             btnShowShoppingCard.classList.add("show-section");
-            console.log(myStyle.marginRight);
             calcShoppingTabRightMargin();
             showProductsSelected();
         }
