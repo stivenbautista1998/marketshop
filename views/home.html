@@ -108,10 +108,18 @@
                 </div>
             </div>
         </nav>
-        <div class="general-input center-search search-home-section">
-            <img class="search-home-icon search-icon" src="../assets/icons/search-icon.svg" alt="search icon">
-            <input id="search-input" onkeyup="searchHandler(event)" class="header-home-section__search" type="text" placeholder="Search product">
-            <img id="js-clean-search" onclick="cleanSearchInput()" class="search-home-icon clean-search" src="../assets/icons/x-icon.svg" alt="close icon">
+        <div class="search-wrapper">
+            <div class="general-input center-search search-home-section">
+                <img class="search-home-icon search-icon" src="../assets/icons/search-icon.svg" alt="search icon">
+                <input id="search-input" onkeyup="searchHandler(event)" class="header-home-section__search" type="text" placeholder="Search product">
+                <img id="js-clean-search" onclick="cleanSearchInput()" class="search-home-icon clean-search" src="../assets/icons/x-icon.svg" alt="close icon">
+            </div>
+            <span class="header-home-section__text hide-section">Order:</span> 
+            <select class="header-home-section__order hide-section">
+                <option selected value="mostRecent">Most recent</option>
+                <option value="mostBought">Most popular</option>
+                <option value="ascendentOrder">Ascendent order</option>
+            </select>
         </div>
         <ul id="home-nav-mobile" class="header-home-section__list">
             <li id="js-all-mobile" onclick="handleHomeList(this)" class="header-home-section__list-option selected-item-mobile">All</li>
@@ -121,12 +129,6 @@
             <li id="js-toys-mobile" onclick="handleHomeList(this)" class="header-home-section__list-option">Toys</li>
             <li id="js-others-mobile" onclick="handleHomeList(this)" class="header-home-section__list-option">Others</li>
         </ul>
-        <span class="header-home-section__text">Order:</span> 
-        <select class="header-home-section__order" name="" id="">
-            <option selected value="mostRecent">Most recent</option>
-            <option value="mostBought">Most popular</option>
-            <option value="ascendentOrder">Ascendent order</option>
-        </select>
     </header>
     <div class="wrapper-home">
         <main id="js-products-container" class="article-section"></main>

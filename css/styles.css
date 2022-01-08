@@ -180,6 +180,7 @@ a.grey__message:hover, a.green__message:hover {
     z-index: 6;
     top: 50px;
     left: 5%;
+    max-width: 450px;
     transition: transform .2s; /* time of transitions */
 }
 
@@ -660,6 +661,10 @@ a.grey__message:hover, a.green__message:hover {
     height: 0px;
 }
 
+.search-wrapper {
+    width: 100%;
+}
+
 @media (min-width: 415px) {
     .header-home-section__list-option:first-child.selected, .header-home-section__list-option:first-child {
         margin-left: 0;
@@ -833,6 +838,10 @@ a.grey__message:hover, a.green__message:hover {
         width: 360px;
         height: 360px;
     }
+}
+
+@media (min-width: 600px) {
+    
 }
 
 

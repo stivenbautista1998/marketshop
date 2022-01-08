@@ -1,6 +1,6 @@
 var btnHomeMenu = null, userData = null, arrayProducts = [], btnShowShoppingCard = null, textLogo, 
 wrapperHomeShoppItems, totalTable, lastIds = "", inputsAccount, wrapperProducts, productDetailWrapper, currentProductFilter = "all";
-var detailImgProduct, detailPriceProduct, detailTittleProduct, detailDescripProduct, detailBtn, detailBtnText, 
+var detailImgProduct, detailPriceProduct, detailTittleProduct, detailDescripProduct, detailBtn, detailBtnText, searchInputElement,
 previousId = "", homeSearchInput, searchCleanIcon, getTotalLoadedProducts = 0, userText, passText, errorMessage,
 labelsLogin, btnLogin, firstChange = false, menuNav, itemAllMobile, itemAllDesk, leftNav, headerHomeNav, counter;
 // another way of getting attributes:  element.getAttribute('attribute-name'); 
@@ -54,12 +54,14 @@ window.addEventListener("load", function() {
         leftNav = document.getElementById("js-left-nav");
         headerHomeNav = document.querySelector(".header-home-nav");
         counter = document.getElementById("js-counter-circle");
+        searchInputElement = document.querySelector(".search-home-section");
 
         detailImgProduct = document.getElementById("js-detail-img");
         detailPriceProduct = document.getElementById("js-detail-price");
         detailTittleProduct = document.getElementById("js-detail-tittle");
         detailDescripProduct = document.getElementById("js-detail-descrip");
         loadProducts();
+        calcShoppingTabRightMargin();
         
         let lastScrollY = window.scrollY;
         window.addEventListener("scroll", () => {
@@ -96,15 +98,18 @@ function calcShoppingTabRightMargin() {
     if(this.innerWidth < 500) {
         btnShowShoppingCard.style.right = 0;
         productDetailWrapper.style.right = 0;
+        searchInputElement.style.left = "5%";
         console.log("< 500: 0px");
     } else if(this.innerWidth < 1187) {
         btnShowShoppingCard.style.right = "5px";
         productDetailWrapper.style.right = "5px";
+        searchInputElement.style.left = "5%";
         console.log("< 1180: 5px");
     } else {
         const shoppingTabMarginRight = (window.innerWidth - headerHomeNav.offsetWidth) / 2;
         btnShowShoppingCard.style.right = shoppingTabMarginRight + "px";
         productDetailWrapper.style.right = shoppingTabMarginRight + "px";
+        searchInputElement.style.left = shoppingTabMarginRight + 15 + "px";
     }
 }
 
