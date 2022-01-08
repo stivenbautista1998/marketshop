@@ -819,13 +819,18 @@ a.grey__message:hover, a.green__message:hover {
     }
 
     .menu-tab + .product-detail-tab {
-        max-height: 640px;
+        max-height: 680px;
         top: 55px;
-        width: 320px;
+        width: 365px;
         right: 0;
         border-radius: 10px;
         overflow: hidden;
         box-shadow: 0px 0px 10px rgb(0 0 0 / 12%);
+    }
+
+    .product-detail-img {
+        width: 360px;
+        height: 360px;
     }
 }
 
