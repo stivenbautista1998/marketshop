@@ -95,13 +95,16 @@ window.addEventListener("resize", () => {
 function calcShoppingTabRightMargin() {
     if(this.innerWidth < 500) {
         btnShowShoppingCard.style.right = 0;
+        productDetailWrapper.style.right = 0;
         console.log("< 500: 0px");
     } else if(this.innerWidth < 1187) {
         btnShowShoppingCard.style.right = "5px";
+        productDetailWrapper.style.right = "5px";
         console.log("< 1180: 5px");
     } else {
         const shoppingTabMarginRight = (window.innerWidth - headerHomeNav.offsetWidth) / 2;
         btnShowShoppingCard.style.right = shoppingTabMarginRight + "px";
+        productDetailWrapper.style.right = shoppingTabMarginRight + "px";
     }
 }
 
@@ -412,13 +415,14 @@ function showProductDetails(idProduct) {
         detailBtnText.innerHTML = "Add to cart";
     }
     productDetailWrapper.classList.add("show-product-detail");
-    document.body.style.overflow = "hidden";
+    document.body.classList.add("no-scroll");
+    calcShoppingTabRightMargin();
 }
 
 // function that hides the product detail view.
 function hideProductDetail() {
     productDetailWrapper.classList.remove("show-product-detail");
-    document.body.style.overflow = "scroll";
+    document.body.classList.remove("no-scroll");
 }
 
 // function that updates the text of the button on the product detail view according to the state of the product.
