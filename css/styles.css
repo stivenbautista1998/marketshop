@@ -235,6 +235,7 @@ a.grey__message:hover, a.green__message:hover {
     border: none;
     font-size: 1.2rem;
     color: #797979;
+    background-color: var(--white);
 }
 
 .header-home-section__order:focus-visible {
