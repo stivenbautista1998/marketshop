@@ -352,7 +352,7 @@ function validateLogin() {
     if(validateEmail(userText.value)) { // checking if the email has the correct format.
         if((userText.value == userData.email) && (passText.value == userData.password)) {
             console.log("Is correct!!");
-            window.location.href = "/views/home.html";
+            window.location.href = "../views/home.html";
         } else {
             console.log("Is wrong!!");
             labelsLogin[0].textContent = "Email address";
