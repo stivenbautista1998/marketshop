@@ -110,7 +110,7 @@ function calcShoppingTabRightMargin() {
 
 // function that change the url of the webpage to the create account view.
 function showMyAccount() {
-    window.location.href = "../views/create-account.html";
+    window.location.href = "https://stivenbautista1998.github.io/marketshop/views/create-account.html";
 }
 
 // function that change the url of the webpage to the login view.
@@ -352,7 +352,7 @@ function validateLogin() {
     if(validateEmail(userText.value)) { // checking if the email has the correct format.
         if((userText.value == userData.email) && (passText.value == userData.password)) {
             console.log("Is correct!!");
-            window.location.href = "../views/home.html";
+            window.location.href = "https://stivenbautista1998.github.io/marketshop/views/home.html";
         } else {
             console.log("Is wrong!!");
             labelsLogin[0].textContent = "Email address";
