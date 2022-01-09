@@ -115,7 +115,7 @@ function showMyAccount() {
 
 // function that change the url of the webpage to the login view.
 function showLogin() {
-    window.location.href = "../index.html";
+    window.location.href = "../";
 }
 
 
