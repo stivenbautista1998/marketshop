@@ -343,7 +343,7 @@ function editAccount(myElement) {
 
 // function that change the url of the webpage to my-order view.
 function showDetails() {
-    window.location.href = "http://127.0.0.1:5500/views/my-order.html";
+    window.location.href = "https://stivenbautista1998.github.io/marketshop/views/my-order.html";
 }
 
 // function that validates if the login info is correct.
