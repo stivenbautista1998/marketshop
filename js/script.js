@@ -7,18 +7,15 @@ labelsLogin, btnLogin, firstChange = false, menuNav, itemAllMobile, itemAllDesk,
 // document.getElementById("myBtn").click();  -- code to click a determined button.
 //myStyle = window.getComputedStyle(headerHomeNav) || headerHomeNav.currentStyle;
 
-fetch("../data/users.json")
-.then(data => data.json())
-.then(result => {
-    userData = result.login[0];
-});
+userData = Login[0];
+arrayProducts = Products;
 
-fetch("../data/products.json")
+/* fetch("../data/products.json")
 .then(data => data.json())
 .then(result => {
     arrayProducts = result.product;
 }).catch(err => console.log(err));
-
+ */
 
 // execute the application code depending of the current web page when the whole app loaded.
 window.addEventListener("load", function() {
@@ -99,12 +96,10 @@ function calcShoppingTabRightMargin() {
         btnShowShoppingCard.style.right = 0;
         productDetailWrapper.style.right = 0;
         searchInputElement.style.left = "5%";
-        console.log("< 500: 0px");
     } else if(this.innerWidth < 1187) {
         btnShowShoppingCard.style.right = "5px";
         productDetailWrapper.style.right = "5px";
         searchInputElement.style.left = "5%";
-        console.log("< 1180: 5px");
     } else {
         const shoppingTabMarginRight = (window.innerWidth - headerHomeNav.offsetWidth) / 2;
         btnShowShoppingCard.style.right = shoppingTabMarginRight + "px";
@@ -332,10 +327,14 @@ function editAccount(myElement) {
         myElement.classList.add("green--btn");
 
         for(let input in inputsAccount) {
-            inputsAccount[input].style.backgroundColor = "#F7F7F7";
-            inputsAccount[input].style.paddingLeft = ".7em";
-            inputsAccount[input].value = inputsAccount[input].placeholder;
-            inputsAccount[input].readOnly = false;
+            if(!isNaN(input)) { // validating that just proceed when the index is a number.
+                inputsAccount[input].style.backgroundColor = "#F7F7F7";
+                inputsAccount[input].style.paddingLeft = ".7em";
+                inputsAccount[input].value = inputsAccount[input].placeholder;
+                inputsAccount[input].readOnly = false;
+            } else {
+                break;
+            }
         }
     } else {
         window.location.href = "../views/home.html";
@@ -349,6 +348,7 @@ function showDetails() {
 
 // function that validates if the login info is correct.
 function validateLogin() {
+    console.log("trying!!");
     if(validateEmail(userText.value)) { // checking if the email has the correct format.
         if((userText.value == userData.email) && (passText.value == userData.password)) {
             console.log("Is correct!!");
