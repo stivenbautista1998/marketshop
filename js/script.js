@@ -19,7 +19,7 @@ arrayProducts = Products;
 
 // execute the application code depending of the current web page when the whole app loaded.
 window.addEventListener("load", function() {
-    if(window.location.href == "https://stivenbautista1998.github.io/marketshop/") {
+    if(window.location.href == "http://127.0.0.1:5500/index.html") {
         userText = document.getElementById("js-user-txt");
         passText = document.getElementById("js-password-txt");
         errorMessage = document.getElementById("js-error-message");
@@ -32,7 +32,7 @@ window.addEventListener("load", function() {
         passText.addEventListener("keyup", checkLoginText);
     }
 
-    if(window.location.href == "https://stivenbautista1998.github.io/marketshop/views/home.html") {
+    if(window.location.href == "http://127.0.0.1:5500/views/home.html") {
         const homeSearch = this.document.querySelector(".search-home-section");
         btnHomeMenu = this.document.getElementById("js-menu-tab");
         btnShowShoppingCard = this.document.getElementById("js-shopping-card-tab");
@@ -72,14 +72,14 @@ window.addEventListener("load", function() {
         });
     }
 
-    if(window.location.href == "https://stivenbautista1998.github.io/marketshop/views/my-account.html") {
+    if(window.location.href == "http://127.0.0.1:5500/views/my-account.html") {
         inputsAccount = document.getElementsByClassName("general-input");
     }
 });
 
 // when the screen is hugger than 499px then it will remove the text "Shopping cart" and will show the image icon.
 window.addEventListener("resize", () => {
-    if(window.location.href == "https://stivenbautista1998.github.io/marketshop/views/home.html") {
+    if(window.location.href == "http://127.0.0.1:5500/views/home.html") {
         if(this.innerWidth >= 500) {
             if(textLogo.classList[0] != "hide-logo") {
                 textLogo.classList.add("hide-logo");
