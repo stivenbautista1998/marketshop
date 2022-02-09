@@ -24,3 +24,6 @@ The technology used in this project are:
 - HTML
 - CSS3
 - Javascript
+
+## Collaborators
+ Andres sierra
